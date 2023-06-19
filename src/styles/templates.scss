@@ -1,0 +1,12 @@
+%centeredRowFlexDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%centeredColumnFlexDisplay {
+  @extend %centeredRowFlexDisplay;
+  flex-direction: column;
+}
+
+
