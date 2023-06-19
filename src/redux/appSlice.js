@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { setStatusThunk, setUserThunk } from './profile/profileSlice'
 import { initializeOptionsThunk } from './settingsSlice'
 import { apiCaller } from '../api/api'
-import { getFriends } from './userSlice'
+import { getFriends } from './usersSlice'
 
 const appSlice = createSlice({
      name: 'app-slice',

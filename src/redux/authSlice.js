@@ -77,7 +77,6 @@ export const loginThunk = createAsyncThunk('main-login-thunk', async ({
      const data = await loginApi.logIn(email, password, rememberMe, antiBotSymbols)
      if (data.resultCode === 0) {
           dispatch(getAuthDataThunk())
-          dispatch(errorAC(false))
           dispatch(setAuthErrorMessage(null))
           dispatch(toggleCaptcha(null))
      } else if (data.resultCode === 1) {
