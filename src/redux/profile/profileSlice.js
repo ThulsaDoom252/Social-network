@@ -177,7 +177,7 @@ export const setUserThunk = createAsyncThunk('set-user-thunk', async ({
      const userData = await apiCaller.setUsers(userId)
      if (userData.status === 200) {
           dispatch(setUserProfile({ profile: userData.data, friends }))
-          if (data.userId === userId) {
+          if (userData.data.userId === userId) {
                localStorage.setItem('userId', userId)
           }
      } else {
