@@ -3,8 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const App = () => {
-     return(
-          <div>Social network v 1.0</div>
+     return (
+          <div className={'wrapper'}>
+               <section className={'section-content'}>
+                    Social Network content
+               </section>
+          </div>
      )
 }
 export default App
