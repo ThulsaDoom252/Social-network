@@ -13,8 +13,6 @@ const reducer = combineReducers({
      users: usersSlice,
      app: appSlice,
      settings: settingsSlice
-
-
 })
 
 export const store = configureStore({ reducer })

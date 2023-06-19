@@ -165,7 +165,7 @@ export const {
      toggleProfilePageNotFound
 } = profileSlice.actions
 
-//THUNKS
+
 export const setUserThunk = createAsyncThunk('set-user-thunk', async ({
                                                                            userId,
                                                                            friends,

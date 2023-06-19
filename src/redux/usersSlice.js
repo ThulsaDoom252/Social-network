@@ -68,7 +68,6 @@ export const {
      addFriend,
 } = usersSlice.actions
 
-//THUNKS
 export const followUserThunk = createAsyncThunk('follow-thunk', async ({userId, userData}, {dispatch}) => {
      dispatch(toggleFollowFetch(userId))
      const data = await apiCaller.follow(userId)

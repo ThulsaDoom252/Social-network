@@ -1,7 +1,6 @@
 import {apiCaller} from "../api/api";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-//STATE
 const messagesSlice = createSlice({
     name: 'dialogs-slice',
     initialState: {
