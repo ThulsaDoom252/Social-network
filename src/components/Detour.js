@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import authHoc from './HOC/authHoc'
 import { compose } from '@reduxjs/toolkit'
-import { toggleDirectEditMode, toggleMobileVersion, toggleNightMode } from '../redux/settingsSlice'
 import SignInContainer from './Auth/SignInContainer'
 import SettingsContainer from './Settings/SettingsContainer'
 

@@ -1,7 +1,4 @@
 import React from 'react'
-import { nightModeStyles } from '../../common/nightModeStyles'
-import Paginator from './Paginator'
-import { NavLink } from 'react-router-dom'
 import { truncateUserData } from '../../common/commonFuncs'
 
 const Users = ({
