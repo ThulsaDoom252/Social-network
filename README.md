@@ -1,7 +1,7 @@
 The best social network in the world.
 v 1.0
 
-Current Version: 0.1
+Current Version: 1.0
 
 Developer: ThulsaDoom
 
