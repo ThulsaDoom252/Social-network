@@ -38,11 +38,12 @@ $leftBorder: null, $rightBorder: null, $topBorder: null, $bottomBorder: null) {
   min-width: $minWidth;
 }
 
-@mixin backgroundMx($url: null, $size: null, $position: null, $repeat: null) {
+@mixin backgroundMx($url: null, $size: null, $position: null, $xPos: null, $repeat: null) {
   background: $url;
   background-size: $size;
   background-position: $position;
   background-repeat: $repeat;
+  background-position-x: $xPos;
 }
 
 @mixin colorsMx($color, $background) {

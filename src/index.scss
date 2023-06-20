@@ -1,6 +1,6 @@
-@import "./styles/nullStyles";
 @import "./styles/templates";
 @import "./styles/mixins";
+@import "./styles/nullStyles";
 @import "styles/Settings";
 @import "styles/Header";
 @import "./styles/Auth";
@@ -10,7 +10,6 @@
 @import "./styles/About";
 
 /*MAIN CONTAINERS*/
-//Containers
 .wrapper {
   width: 1100px;
   margin: 0 auto;
@@ -29,5 +28,3 @@
   @include sizeMx(100vw, 100vh);
   @extend %centeredColumnFlexDisplay;
 }
-
-
