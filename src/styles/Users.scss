@@ -1,0 +1,72 @@
+.users-container {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 5px;
+  font-family: "Open Sans";
+  min-height: 400px;
+  background-color: #d2c4c4;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.users-page-title {
+  letter-spacing: 2px;
+  font-weight: 10;
+  font-size: 1.3rem;
+}
+
+.users-list-grid {
+  display: grid;
+  width: 100%;
+  max-height: fit-content;
+  margin: 40px auto auto auto;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  gap: 5px;
+}
+
+.user-block {
+  @include flexDisplayMx(flex, $align: center, $direction: column);
+  font-size: 1.2rem;
+  width: 150px;
+}
+
+.user-avatar-item {
+  width: 100%;
+}
+
+.user-avatar {
+  @include borderMx($topLeftRadius: 10px, $topRightRadius: 10px);
+  width: 100%;
+}
+
+.user-data-block {
+  position: relative;
+  top: -5px;
+  width: 100%;
+  @include borderMx($leftBorder: $grayThinSolidBorder, $rightBorder: $grayThinSolidBorder,
+  $bottomBorder: $grayThinSolidBorder, $bottomLeftRadius: 10px, $bottomRightRadius: 10px);
+  background-color: white;
+}
+
+.users-page-user-name {
+  font-style: italic;
+  word-wrap: break-word;
+  margin: 0 auto;
+}
+
+.users-page-user-status {
+  word-wrap: break-word;
+  margin: 5px auto auto auto;
+}
+
+.user-follow-btn {
+  @include colorsMx(white, #888888);
+  margin-top: 10px;
+  width: 90%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-follow-btn:disabled {
+  background-color: rgba(222, 191, 191, 0.5);
+}
