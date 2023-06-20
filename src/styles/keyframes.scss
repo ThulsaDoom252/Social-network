@@ -1,0 +1,31 @@
+/*LOGIN ANIMATION*/
+@keyframes loginAppear {
+  0% {
+    opacity: 0;
+    margin-bottom: 50px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes loginBlockAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
+}

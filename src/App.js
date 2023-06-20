@@ -1,23 +1,50 @@
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import HeaderContainer from './components/Header/HeaderContainer'
 import SettingsContainer from './components/Settings/SettingsContainer'
 import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import SignInContainer from './components/Auth/SignInContainer'
+import { initializeAppThunk } from './redux/appSlice'
+import { useEffect } from 'react'
+import { nightModeStyles } from './common/nightModeStyles'
+import Initialize from './components/Initialize'
+import Detour from './components/Detour'
 
 const App = () => {
      const dispatch = useDispatch()
      const nightMode = useSelector(state => state.settings.nightMode)
+     const isLogged = useSelector(state => state.auth.isLogged)
+     const initialized = useSelector(state => state.app.initialized)
+
+     useEffect(() => {
+          if (nightMode) {
+               document.body.style =
+                    'background: linear-gradient(360deg, black, #2a2828, #121a34, #252a2d)'
+          } else {
+               document.body.style =
+                    'background: linear-gradient(180deg, #5ee7c1, #00e8a5, #35cbff, #5ee7c1)'
+          }
+     }, [nightMode])
+
+     useEffect(() => {
+          dispatch(initializeAppThunk())
+     }, [])
+
+     if (!initialized) {
+          return <Initialize />
+     }
+
      return (
           <BrowserRouter>
                <div className={'wrapper'}>
-                    <HeaderContainer {...{ dispatch }} />
-                    <section className={'section-content'}>
+                    {isLogged && <HeaderContainer {...{ dispatch }} />}
+                    <section style={nightMode ? nightModeStyles.section : null}
+                             className={isLogged && 'section-content'}>
                          <Routes>
+                              <Route path={'/'} element={<Detour />} />
+                              <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/settings'} element={<SettingsContainer {...nightMode} />} />
                          </Routes>
-                         Social Network content
                     </section>
                </div>
           </BrowserRouter>

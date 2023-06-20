@@ -3,6 +3,7 @@ import { toggleDirectEditMode, toggleMobileVersion, toggleNightMode } from '../.
 import { compose } from '@reduxjs/toolkit'
 import { connect } from 'react-redux'
 import Settings from './Settings'
+import authHoc from '../HOC/authHoc'
 
 const SettingsContainer = ({
                                 nightMode,
@@ -45,4 +46,4 @@ export default compose(connect(settingsState, {
      toggleNightMode,
      toggleDirectEditMode,
      toggleMobileVersion
-}))(SettingsContainer)
+}), authHoc)(SettingsContainer)

@@ -1,8 +1,9 @@
 @import "./styles/nullStyles";
 @import "./styles/templates";
 @import "./styles/mixins";
-@import "./styles/settings";
-@import "./styles/header";
+@import "styles/Settings";
+@import "styles/Header";
+@import "./styles/Auth";
 
 /*MAIN CONTAINERS*/
 .wrapper {
