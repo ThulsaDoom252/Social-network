@@ -11,6 +11,7 @@ import Initialize from './components/Initialize'
 import Detour from './components/Detour'
 import NotFound from './components/common/NotFound'
 import UsersRelay from './components/Users/UsersRelay'
+import About from './components/About'
 
 const App = () => {
      const dispatch = useDispatch()
@@ -47,6 +48,7 @@ const App = () => {
                               <Route path={'/'} element={<Detour />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/users'} element={<UsersRelay />} />
+                              <Route path={'/about'} element={<About />} />
                               <Route path={'/settings'} element={<SettingsContainer {...nightMode} />} />
                               <Route path='*' element={<NotFound />} />
                          </Routes>

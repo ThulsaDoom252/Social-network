@@ -4,6 +4,7 @@ import defaultAvatar from '../common/default-avatar.jfif'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { ImUsers } from 'react-icons/im'
+import { TfiInfoAlt } from 'react-icons/tfi'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
      const navButtonsClass = 'navbar-btn'
@@ -30,6 +31,9 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/users'}><ImUsers />Users</NavLink>
+                    <NavLink
+                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
+                         to={'/about'}><TfiInfoAlt />About</NavLink>
                </div>
           </header>
      )
