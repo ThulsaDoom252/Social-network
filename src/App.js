@@ -11,13 +11,16 @@ import Initialize from './components/Initialize'
 import Detour from './components/Detour'
 import NotFound from './components/common/NotFound'
 import UsersRelay from './components/Users/UsersRelay'
+import About from './components/About'
 
 const App = () => {
      const dispatch = useDispatch()
      const nightMode = useSelector(state => state.settings.nightMode)
      const isLogged = useSelector(state => state.auth.isLogged)
      const initialized = useSelector(state => state.app.initialized)
-     const showMobileVersion = useSelector(state => state.settings.showMobileVersion)
+
+     const showMobileLayout = useSelector(state => state.settings.showMobileVersion)
+
 
      useEffect(() => {
           if (nightMode) {
@@ -39,7 +42,7 @@ const App = () => {
 
      return (
           <BrowserRouter>
-               <div className={'wrapper'} style={{ width: showMobileVersion && '800px' }}>
+               <div style={{ width: showMobileLayout ? '800px' : void 0 }} className={'wrapper'}>
                     {isLogged && <HeaderContainer {...{ dispatch }} />}
                     <section style={nightMode ? nightModeStyles.section : null}
                              style={{ width: showMobileVersion && '800px' }}
@@ -48,6 +51,7 @@ const App = () => {
                               <Route path={'/'} element={<Detour />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/users'} element={<UsersRelay />} />
+                              <Route path={'/about'} element={<About />} />
                               <Route path={'/settings'} element={<SettingsContainer {...nightMode} />} />
                               <Route path='*' element={<NotFound />} />
                          </Routes>
