@@ -1,6 +1,6 @@
-@import "./styles/nullStyles";
 @import "./styles/templates";
 @import "./styles/mixins";
+@import "./styles/nullStyles";
 @import "styles/Settings";
 @import "styles/Header";
 @import "./styles/Auth";
@@ -10,11 +10,6 @@
 @import "./styles/About";
 
 /*MAIN CONTAINERS*/
-@import "styles/nullStyles";
-@import "styles/mixins";
-@import "styles/templates";
-
-//Containers
 .wrapper {
   width: 1100px;
   margin: 0 auto;
@@ -32,22 +27,4 @@
   max-height: fit-content;
   @include sizeMx(100vw, 100vh);
   @extend %centeredColumnFlexDisplay;
-}
-
-
-.header-navbar-button, .header-navbar-button-active {
-  border-right: #ffffff solid 3px;
-  padding-left: 5px;
-  color: white;
-  text-decoration: none;
-}
-
-.header-navbar-button-active {
-  text-decoration: underline;
-}
-
-.header-navbar-button:hover {
-  text-decoration: underline;
-  cursor: pointer;
-  transition: 0.5s;
 }

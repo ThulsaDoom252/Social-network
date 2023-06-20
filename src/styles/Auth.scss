@@ -1,13 +1,11 @@
 @import "mixins";
 @import "templates";
-@import "keyframes";
 
 /*************************LOGIN PAGE*********************/
 .login-page-container {
+  @include sizeMx($height: 600px, $maxWidth: 1150px);
   display: flex;
-  height: 600px;
   font-family: "Fira Sans";
-  max-width: 1150px;
   background: linear-gradient(190deg, #e5ffeb, #badcd2, #bdb1c5, #cbbc92);
   border-radius: 2%;
   animation: loginAppear 1.5s forwards;
@@ -16,20 +14,18 @@
 
 /*LEFT PART*/
 .login-left-part-container {
-  background: url("https://elitex.systems/blog/wp-content/uploads/2021/04/react-advantage-1024x683.jpg");
+  @include backgroundMx(url("https://elitex.systems/blog/wp-content/uploads/2021/04/react-advantage-1024x683.jpg"),
+  $xPos: -120px);
+  @include flexDisplayMx(center, center);
+  @include borderMx($topLeftRadius: 2%, $bottomLeftRadius: 2%);
   width: 60%;
-  background-position-x: -120px;
-  border-top-left-radius: 2%;
-  border-bottom-left-radius: 2%;
-  @extend %centeredRowFlexDisplay;
 }
 
 .login-page-left-part {
   border-radius: 5%;
-  display: table;
   color: white;
+  width: 70%;
   font-family: "Open Sans";
-  @include sizeMx(70%, 75%);
 }
 
 .slogan-block {
@@ -99,11 +95,7 @@
 }
 
 .signUp-label {
-  background-image: url("../components/Auth/signUp-logo.png");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-x: 140px;
-  background-position-y: -10px;
+  @include backgroundMx(url("../components/Auth/signUp-logo.png"), $size: 50%, $position: 140px -10px, $repeat: no-repeat);
   @extend %centeredRowFlexDisplay;
   color: green;
   font-family: "Fira Sans";
@@ -112,11 +104,11 @@
 }
 
 .signUp-btn {
+  @extend %centeredRowFlexDisplay;
+  @include colorsMx(#d0c8c8, #3f3c3c);
+  @include sizeMx(80%, 50px);
   margin: 30% 15% auto auto;
   border-radius: 4px;
-  @extend %centeredRowFlexDisplay;
-  @include sizeMx(80%, 50px);
-  @include colorsMx(#d0c8c8, #3f3c3c);
   text-align: center;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -137,17 +129,14 @@ SIGN IN BLOCK
 }
 
 .signIn-container {
+  @extend %centeredRowFlexDisplay;
+  @include backgroundMx(url("../components/Auth/desktop-signIn-logo.png"), $size: 420px, $repeat: no-repeat,
+  $position: 120px 24px);
   transition: 2ms;
-  background-image: url("../components/Auth/desktop-signIn-logo.png");
-  background-size: 420px;
-  background-repeat: no-repeat;
-  background-position-x: 120px;
-  background-position-y: 24px;
   margin-top: 25px;
   padding: 15px 0 0 40px;
   text-align: center;
   animation: loginBlockAppear 500ms forwards;
-  @extend %centeredRowFlexDisplay;
 }
 
 .signIn-title {
@@ -161,34 +150,31 @@ SIGN IN BLOCK
 }
 
 .signIn-inputs-container {
-  @include flexDisplayMx(flex, space-around, center, column);
+  @include flexDisplayMx($direction: column, $align: center, $justify: space-around);
   position: relative;
   margin: 50px auto auto auto;
 }
 
 .signIn-input-error {
-  bottom: 45px;
+  @include positionMx(absolute, $bottom: 45px);
   color: #fff200;
-  position: absolute;
 }
 
 .signIn-input, .signIn-captcha-input {
+  @include borderMx($radius: 5px, $border: solid black thin);
   width: 78%;
   text-align: center;
   font-family: Teko;
   letter-spacing: 1px;
   font-size: 0.95rem;
   padding: 10px;
-  border-radius: 5px;
-  border: solid black;
-  border-width: thin;
 }
 
 .signIn-captcha-block {
+  @extend %centeredColumnFlexDisplay;
   position: relative;
   margin-top: 20px;
   flex-wrap: nowrap;
-  @extend %centeredColumnFlexDisplay;
 }
 
 .signIn-captcha-input {
@@ -196,6 +182,7 @@ SIGN IN BLOCK
   left: 50%;
   transform: translateX(-50%);
   @include sizeMx(200px, 30px);
+
 }
 
 .rememberMe-container {
@@ -206,10 +193,9 @@ SIGN IN BLOCK
 }
 
 .signIn-btn-container {
+  @include flexDisplayMx($wrap: nowrap, $direction: column, $align: center, $justify: space-around);
   position: relative;
   margin: 40px auto auto auto;
-  @include flexDisplayMx(flex, space-around, center, column);
-  flex-wrap: nowrap;
 }
 
 .mobile-signUp-block {
@@ -222,10 +208,11 @@ SIGN IN BLOCK
   cursor: pointer;
 }
 
+
 .signIn-btn, .signIn-btn-error {
-  border-radius: 10px;
-  @include colorsMx(rgba(255, 255, 255, 0.74), #3f3c3c );
+  @include colorsMx(rgba(255, 255, 255, 0.74), #3f3c3c);
   @include sizeMx(250px, 40px);
+  border-radius: 10px;
   font-weight: 900;
   transition: 0.5s;
 }
