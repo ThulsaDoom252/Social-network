@@ -10,6 +10,7 @@ import { nightModeStyles } from './common/nightModeStyles'
 import Initialize from './components/Initialize'
 import Detour from './components/Detour'
 import NotFound from './components/common/NotFound'
+import UsersRelay from './components/Users/UsersRelay'
 
 const App = () => {
      const dispatch = useDispatch()
@@ -44,6 +45,7 @@ const App = () => {
                          <Routes>
                               <Route path={'/'} element={<Detour />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
+                              <Route path={'/users'} element={<UsersRelay />} />
                               <Route path={'/settings'} element={<SettingsContainer {...nightMode} />} />
                               <Route path='*' element={<NotFound />} />
                          </Routes>

@@ -161,7 +161,7 @@ SIGN IN BLOCK
 }
 
 .signIn-inputs-container {
-  @include displayMx(flex, space-around, center, column);
+  @include flexDisplayMx(flex, space-around, center, column);
   position: relative;
   margin: 50px auto auto auto;
 }
@@ -208,7 +208,7 @@ SIGN IN BLOCK
 .signIn-btn-container {
   position: relative;
   margin: 40px auto auto auto;
-  @include displayMx(flex, space-around, center, column);
+  @include flexDisplayMx(flex, space-around, center, column);
   flex-wrap: nowrap;
 }
 

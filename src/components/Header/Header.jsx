@@ -6,24 +6,24 @@ import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { ImUsers } from 'react-icons/im'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
-     const navButtonsClass = 'header-navbar-button'
-     const navButtonsActiveClass = 'header-navbar-button-active'
+     const navButtonsClass = 'navbar-btn'
+     const navButtonsActiveClass = 'navbar-btn-active'
      return (
           <header className={'header-container'}>
                <div className={'header-current-user-block'}>
-                    <div className={'header-current-avatar-item'}>
-                         <img className={'header-current-avatar'}
+                    <div className={'header-avatar-item'}>
+                         <img className={'header-avatar'}
                               src={defaultAvatar}
                               alt={'user-avatar'} />
                     </div>
-                    <span className={'header-current-user-name'}>'ThulsaDoom'</span>
-                    <button title='logout' className={'header-logout-button'}
+                    <span className={'header-user-name'}>'ThulsaDoom'</span>
+                    <button title='logout' className={'logOut-btn'}
                             onClick={handleLogOut}>
                          <RiLogoutBoxRLine />
                          <span className={'header-logOut-label'}>Log out</span>
                     </button>
                </div>
-               <div className={'header-navbar'}>
+               <div className={'navbar'}>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/settings'}><IoSettingsOutline />Settings</NavLink>

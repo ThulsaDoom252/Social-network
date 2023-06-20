@@ -1,5 +1,5 @@
-import {apiCaller} from "../api/api";
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { apiCaller } from '../api/api'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const usersSlice = createSlice({
      name: 'users-slice',
@@ -8,17 +8,18 @@ const usersSlice = createSlice({
           friends: [],
           pageSize: 10,
           totalCount: 19607,
+          usersPerPage: 10,
           currentPage: 2,
           fetchUsers: false,
           followUserFetch: null,
-          friendsCount: 100,
+          friendsCount: 100
      },
      reducers: {
           followUser(state, action) {
-               state.users = state.users.map(user => user.id === action.payload ? {...user, followed: true} : user)
+               state.users = state.users.map(user => user.id === action.payload ? { ...user, followed: true } : user)
           },
           unFollowUser(state, action) {
-               state.users = state.users.map(user => user.id === action.payload ? {...user, followed: false} : user)
+               state.users = state.users.map(user => user.id === action.payload ? { ...user, followed: false } : user)
           },
           setUsersTotalCount(state, action) {
                state.totalCount = action.payload
@@ -27,7 +28,7 @@ const usersSlice = createSlice({
                state.friends = [...action.payload]
           },
           addFriend(state, action) {
-               const {userId, userData} = action.payload
+               const { userId, userData } = action.payload
                let friend
                if (userData) {
                     friend = userData
@@ -50,8 +51,8 @@ const usersSlice = createSlice({
           },
           toggleFollowFetch(state, action) {
                state.followUserFetch = action.payload
-          },
-     },
+          }
+     }
 })
 export default usersSlice.reducer
 
@@ -65,20 +66,20 @@ export const {
      unFollowFriend,
      setCurrentPage,
      getUsers,
-     addFriend,
+     addFriend
 } = usersSlice.actions
 
-export const followUserThunk = createAsyncThunk('follow-thunk', async ({userId, userData}, {dispatch}) => {
+export const followUserThunk = createAsyncThunk('follow-thunk', async ({ userId, userData }, { dispatch }) => {
      dispatch(toggleFollowFetch(userId))
      const data = await apiCaller.follow(userId)
      if (data.resultCode === 0) {
           dispatch(followUser(userId))
-          dispatch(addFriend({userId, userData}))
+          dispatch(addFriend({ userId, userData }))
      }
      dispatch(toggleFollowFetch(null))
 })
 
-export const unFollowUserThunk = createAsyncThunk('unfollow-thunk', async ({userId, userData}, {dispatch}) => {
+export const unFollowUserThunk = createAsyncThunk('unfollow-thunk', async ({ userId, userData }, { dispatch }) => {
      dispatch(toggleFollowFetch(userId))
      const data = await apiCaller.unFollow(userId)
      if (data.resultCode === 0) {
@@ -89,7 +90,7 @@ export const unFollowUserThunk = createAsyncThunk('unfollow-thunk', async ({user
 })
 
 
-export const getUsersThunk = createAsyncThunk('getUsers-thunk', async ({currentPage, usersPerPage}, {dispatch}) => {
+export const getUsersThunk = createAsyncThunk('getUsers-thunk', async ({ currentPage, usersPerPage }, { dispatch }) => {
      dispatch(toggleFetchUsers(true))
      const data = await apiCaller.getUsers(currentPage, usersPerPage)
      dispatch(getUsers(data.items))
@@ -99,14 +100,14 @@ export const getUsersThunk = createAsyncThunk('getUsers-thunk', async ({currentP
 
 })
 
-export const getFriendsThunk = createAsyncThunk('getFriends-thunk', async (count, {dispatch}) => {
+export const getFriendsThunk = createAsyncThunk('getFriends-thunk', async (count, { dispatch }) => {
      dispatch(toggleFetchUsers(true))
      const data = await apiCaller.getFriends(count)
      dispatch(getFriends(data.items))
      dispatch(toggleFetchUsers(false))
 })
 
-export const unfollowFriendThunk = createAsyncThunk('unfollow-friend-tc', async ({friendId, index}, {dispatch}) => {
+export const unfollowFriendThunk = createAsyncThunk('unfollow-friend-tc', async ({ friendId, index }, { dispatch }) => {
      dispatch(toggleFollowFetch(friendId))
      await apiCaller.unFollow(friendId)
      dispatch(unFollowFriend(friendId, index))
