@@ -1,5 +1,3 @@
-import loadingBar from '../components/common/loading-bar.gif'
-import headerLoading from '../components/common/headerLoading.gif'
 import React from 'react'
 
 import loadingBar from "../components/common/loading-bar.gif";
