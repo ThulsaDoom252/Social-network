@@ -12,6 +12,7 @@ import Detour from './components/Detour'
 import NotFound from './components/common/NotFound'
 import UsersRelay from './components/Users/UsersRelay'
 import About from './components/About'
+import FriendsContainer from './components/Friends/FriendsContainer'
 
 const App = () => {
      const dispatch = useDispatch()
@@ -47,6 +48,7 @@ const App = () => {
                              className={isLogged && 'section-content'}>
                          <Routes>
                               <Route path={'/'} element={<Detour />} />
+                              <Route path={'/friends'} element={<FriendsContainer nightMode={nightMode} />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/users'} element={<UsersRelay />} />
                               <Route path={'/about'} element={<About />} />

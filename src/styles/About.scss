@@ -1,8 +1,12 @@
-@import "templates";
+@import 'templates';
+@import 'variables';
 
 .about-page {
+  margin: 0 auto;
+  background-color: #d2c4c4;;
   @extend %centeredRowFlexDisplay;
-  min-height: 600px;
+  min-height: $minPageContainerHeight;
+  width: 90%;
 }
 
 .content {

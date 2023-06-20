@@ -1,3 +1,5 @@
+@import "variables";
+
 .users-container {
   margin-top: 15px;
   width: 100%;
@@ -7,6 +9,7 @@
   background-color: #d2c4c4;
   padding: 20px;
   overflow-y: scroll;
+  min-height: $minPageContainerHeight;
 }
 
 .users-page-title {
