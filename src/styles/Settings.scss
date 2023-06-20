@@ -3,17 +3,14 @@
 
 /*SETTINGS*/
 .settings-page-container {
-  min-height: 715px;
+  @include sizeMx(90%, $minHeight: 715px);
+  @include backgroundMx(url("https://www.freeiconspng.com/uploads/white-gear-png-gear-icon-png-white-gear-icon-30.png")
+  rgba(255, 255, 255, 0.8), $repeat: no-repeat, $position: 350px 90px);
   margin: 15px auto;
-  width: 90%;
   font-size: 1.1rem;
   padding: 15px;
   font-family: SansSerif;
   display: flex;
-  background: url("https://www.freeiconspng.com/uploads/white-gear-png-gear-icon-png-white-gear-icon-30.png") rgba(255, 255, 255, 0.8);
-  background-repeat: no-repeat;
-  background-position-x: 350px;
-  background-position-y: 90px;
 }
 
 .settings-left-part {
@@ -55,7 +52,6 @@
   position: relative;
   right: 10px;
 }
-
 
 .settings-block-switch {
   cursor: pointer;
