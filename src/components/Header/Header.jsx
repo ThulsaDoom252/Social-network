@@ -6,6 +6,7 @@ import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { ImUsers } from 'react-icons/im'
 import { TfiInfoAlt } from 'react-icons/tfi'
 import { HiUsers } from 'react-icons/hi'
+import { BiMessageSquareDots } from 'react-icons/bi'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
      const navButtonsClass = 'navbar-btn'
@@ -26,6 +27,9 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                     </button>
                </div>
                <div className={'navbar'}>
+                    <NavLink
+                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
+                         to={'/messages'}><BiMessageSquareDots />Messages</NavLink>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/friends'}><HiUsers />Friends</NavLink>
