@@ -1,50 +1,39 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import defaultAvatar from '../common/default-avatar.jfif'
-import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { IoSettingsOutline } from 'react-icons/io5'
-import { TfiGallery, TfiUser } from 'react-icons/tfi'
-import { FaUserFriends } from 'react-icons/fa'
+import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { ImUsers } from 'react-icons/im'
-import { BiMessageSquareDetail } from 'react-icons/bi'
+import { TfiInfoAlt } from 'react-icons/tfi'
 
-const Header = () => {
-     const navButtonsClass = 'header-navbar-button'
-     const navButtonsActiveClass = 'header-navbar-button-active'
+const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
+     const navButtonsClass = 'navbar-btn'
+     const navButtonsActiveClass = 'navbar-btn-active'
      return (
           <header className={'header-container'}>
                <div className={'header-current-user-block'}>
-                    <div className={'header-current-avatar-item'}>
-                         <img className={'header-current-avatar'}
+                    <div className={'header-avatar-item'}>
+                         <img className={'header-avatar'}
                               src={defaultAvatar}
                               alt={'user-avatar'} />
                     </div>
-                    <NavLink to={`/profile`}
-                             className={'header-current-user-name'}>ThulsaDoom</NavLink>
-                    <button title='logout' className={'header-logout-button'}>
+                    <span className={'header-user-name'}>'ThulsaDoom'</span>
+                    <button title='logout' className={'logOut-btn'}
+                            onClick={handleLogOut}>
                          <RiLogoutBoxRLine />
                          <span className={'header-logOut-label'}>Log out</span>
                     </button>
                </div>
-               <div className={'header-navbar'}>
+               <div className={'navbar'}>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
-                         to={`/profile`}><TfiUser />Profile</NavLink>
-                    <NavLink
-                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
-                         to={'/messages'}><BiMessageSquareDetail />Messages</NavLink>
-                    <NavLink
-                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
-                         to={'/gallery'}><TfiGallery />Photos</NavLink>
-                    <NavLink
-                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
-                         to={'/friends'}><FaUserFriends />Friends</NavLink>
+                         to={'/settings'}><IoSettingsOutline />Settings</NavLink>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/users'}><ImUsers />Users</NavLink>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
-                         to={'/settings'}><IoSettingsOutline />Settings</NavLink>
+                         to={'/about'}><TfiInfoAlt />About</NavLink>
                </div>
           </header>
      )

@@ -1,3 +1,5 @@
+import loadingBar from '../components/common/loading-bar.gif'
+import headerLoading from '../components/common/headerLoading.gif'
 import React from 'react'
 
 import loadingBar from "../components/common/loading-bar.gif";
@@ -14,9 +16,12 @@ export const directEditModeInfo = 'In directMode all user\'s data can be changed
 export const showMobileLayoutInfo = 'If on - site will render in mobile mode. Always'
 export const profileNotFound = 'profile not found'
 export const fetchUiSpin = <p><i className={'fa fa-spinner fa-spin'}></i></p>
-export const fetchUiBar = <p><img className={"loading-bar"} src={loadingBar} alt=""/></p>
-export const fetchUiHeader = <p><img className={"header-loading"} src={headerLoading} alt="loading..."/></p>
-export const fetchUsers = <p><img className={"header-loading"} src={headerLoading} alt="loading..."/></p>
+
+export const fetchUiBar = <p><img className={'loading-bar'} src={loadingBar} alt='' /></p>
+export const fetchUiHeader = <p><img className={'header-loading'} src={headerLoading} alt='loading...' /></p>
+export const fetchUsers = <p><img className={'header-loading'} src={headerLoading} alt='loading...' /></p>
+
+
 
 export const youtube = 'youtube'
 export const instagram = 'instagram'

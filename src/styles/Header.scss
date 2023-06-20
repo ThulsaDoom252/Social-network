@@ -1,0 +1,81 @@
+@import "mixins";
+@import "templates";
+
+.header-container {
+  background-image: url("../components/Header/BG.jpg");
+  background-size: 1100px 300px;
+  background-position: center -30px;
+  @include sizeMx(100%, 200px);
+  @extend %centeredRowFlexDisplay;
+  font-size: 0.938rem;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.header-current-user-block {
+  @include flexDisplayMx($align: center);
+  @include positionMx(absolute, $bottom: 50px);
+  padding: 0 0 0 1.5%;
+  width: 100%;
+  align-items: center;
+}
+
+.header-avatar-item {
+  width: 100px;
+}
+
+.header-avatar {
+  width: 100%;
+  border-radius: 50px;
+}
+
+.header-user-name {
+  margin: 0 0 0 30px;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.header-user-name:hover {
+  transition: 1s;
+  text-decoration: underline;
+}
+
+.logOut-btn {
+  @extend %centeredRowFlexDisplay;
+  @include sizeMx(100px, 40px);
+  @include positionMx(absolute, $right: 2%);
+  @include borderMx($style: none, $radius: 5px);
+  letter-spacing: 2px;
+  background-color: #5EE7C1FF;
+  font-size: 1rem;
+}
+
+.logOut-btn:hover {
+  transition: 0.5s;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-top: auto;
+  @include positionMx(absolute, $bottom: 10px);
+  letter-spacing: 7px;
+}
+
+.navbar-btn, .navbar-btn-active {
+  border-right: #ffffff solid 3px;
+  padding-left: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-btn-active {
+  text-decoration: underline;
+}
+
+.navbar-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.5s;
+}
+

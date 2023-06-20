@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import initializing from "./common/initializing.gif"
 
 const Initialize = () => {
-     return (
-          <div>
-               Initializing
-          </div>
-     )
+    return (
+        <div className={'container'}>
+            <div className={"initializing-image"}>
+                <img src={initializing} alt="app is initializing"/>
+            </div>
+        </div>
+    );
 }
 
-export default Initialize
+export default Initialize;
+
