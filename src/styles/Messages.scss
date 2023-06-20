@@ -1,0 +1,120 @@
+@import "mixins";
+@import "templates";
+@import "variables";
+
+.message-page-container {
+  @include sizeMx(80%, $minPageContainerHeight);
+  @include borderMx($radius: 4px, $border: $grayThinSolidBorder);
+  display: flex;
+  font-family: "Open Sans";
+  margin: 20px auto auto auto;
+  background: linear-gradient(300deg, #ffdddd, #e7abab, #fae5bb, #fce4cb);
+}
+
+.message-page-left-part {
+  width: 25%;
+}
+
+.message-page-right-part {
+  position: relative;
+  width: 75%;
+}
+
+.page-info {
+  @include positionMx(absolute, $top: 50%, $left: 50%);
+  transform: translate(-50%, -50%);
+}
+
+.new-message-block {
+  @extend %centeredRowFlexDisplay;
+  @include sizeMx(100%, 10%);
+  @include borderMx($bottomBorder: $grayThinSolidBorder, $rightBorder: $grayThinSolidBorder);
+}
+
+.new-message-button {
+  position: relative;
+  font-size: 1.8rem;
+  left: 15px;
+}
+
+.sender-block {
+  @include flexDisplayMx(space-between, center);
+  @include sizeMx(100%, 10%);
+  font-size: 1.5rem;
+  padding: 0 25px 0 25px;
+  border-bottom: solid gray thin;
+}
+
+.sender-block-button {
+  padding: 10px;
+}
+
+.messages-container {
+  /*height: 550px;*/
+  height: 80%;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.message-block {
+  margin: 20px;
+  display: flex;
+  height: auto;
+  align-items: end;
+  width: 50%;
+}
+
+.message-block-avatar {
+  width: 15%;
+  border-radius: 20px;
+}
+
+.message-block-text {
+  width: 85%;
+  text-align: left;
+  word-wrap: break-word;
+  background-color: #ccb4b4;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.message-page-sender-block {
+  border-right: solid black 1px;
+  height: 90%;
+  font-size: 1.1rem;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.message-page-user {
+  margin-bottom: 20px;
+  display: flex;
+  height: auto;
+  cursor: pointer;
+  text-align: left;
+}
+
+.message-input-block {
+  @extend %centeredRowFlexDisplay;
+  height: 10%;
+}
+
+.message-input {
+  @include sizeMx(80%, 30px);
+  width: 80%;
+  height: 30px;
+  border: $grayThinSolidBorder;
+  border-radius: 5px;
+}
+
+.message-page-user-avatar {
+  @include sizeMx(30%, 10%);
+  border-radius: 30px;
+  margin-right: 2px;
+}
+
+.message-page-user-name {
+  font-weight: bold;
+  word-wrap: break-word;
+  width: 60%;
+}
