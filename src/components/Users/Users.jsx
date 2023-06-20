@@ -12,8 +12,8 @@ const Users = ({
           <>
                <div className={'users-page-title'}>USERS: {totalCount}</div>
                <div className='users-list-grid'>
-                    {users.map((user, index) =>
-                         <div className='user-block' key={index}>
+                    {users.map(user =>
+                         <div className='user-block' key={user.id}>
                               <div>
                                    <div className={'user-avatar-item'}>
                                         <img className={'user-avatar'}

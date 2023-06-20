@@ -5,6 +5,7 @@ import { IoSettingsOutline } from 'react-icons/io5'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { ImUsers } from 'react-icons/im'
 import { TfiInfoAlt } from 'react-icons/tfi'
+import { HiUsers } from 'react-icons/hi'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
      const navButtonsClass = 'navbar-btn'
@@ -25,6 +26,9 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                     </button>
                </div>
                <div className={'navbar'}>
+                    <NavLink
+                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
+                         to={'/friends'}><HiUsers />Friends</NavLink>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/settings'}><IoSettingsOutline />Settings</NavLink>

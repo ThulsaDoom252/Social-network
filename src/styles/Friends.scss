@@ -1,0 +1,69 @@
+@import "templates";
+@import "mixins";
+@import "variables";
+
+
+/*FRIENDS*/
+.friends-page-container {
+  background: linear-gradient(300deg, #ffffff, #ffc8c8, #dcd9cc, #dedad2);
+  @include flexDisplayMx($direction: column, $justify: left);
+  margin-top: 20px;
+  padding: 20px;
+  font-family: "Open Sans";
+  height: 700px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  min-height: $minPageContainerHeight;
+}
+
+.friends-page-title {
+  font-size: 1.3rem;
+}
+
+.friends-page-hr {
+  @include sizeMx(50%, 0.5px);
+  background-color: black;
+  margin: 15px auto auto auto;
+}
+
+.friends-list-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  margin: 20px auto auto auto;
+}
+
+.friend-block {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-weight: 2;
+  font-size: 1.2rem;
+}
+
+.friend-avatar {
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.friend-data-block {
+  background-color: white;
+  @include borderMx($bottomLeftRadius: 10px, $bottomRightRadius: 10px, $leftBorder: $grayThinSolidBorder,
+  $rightBorder: $grayThinSolidBorder,
+  $bottomBorder: $grayThinSolidBorder);
+
+}
+
+.friend-status, .friend-unfollow-btn {
+  margin: 4px;
+  word-wrap: break-word;
+}
+
+.friend-unfollow-btn {
+  @include colorsMx(white, gray);
+  @include sizeMx(90%, 30px);
+  border-radius: 4px;
+  cursor: pointer;
+}

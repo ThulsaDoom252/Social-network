@@ -8,6 +8,7 @@
 @import "./styles/Users";
 @import "./styles/Paginator";
 @import "./styles/About";
+@import "./styles/Friends";
 
 /*MAIN CONTAINERS*/
 .wrapper {
@@ -17,6 +18,7 @@
 
 .section-content {
   width: 100%;
+  min-height: 775px;
   transition: 0.5s;
   text-align: center;
   background: linear-gradient(360deg, #6868ff, #3c91ff, #37a6c7, #70d3ef);

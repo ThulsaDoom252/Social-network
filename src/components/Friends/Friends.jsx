@@ -1,10 +1,39 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { truncateUserData } from '../../common/commonFuncs'
+import { fetchUsers } from '../../common/commonData'
+import { nightModeStyles } from '../../common/nightModeStyles'
 
-const Friends = () => {
+const Friends = ({ nightMode, friends, handleUnfollowFriend, defaultAvatar, friendsFetch }) => {
      return (
-          <div>
-               Friends
-          </div>
+          <>
+               {!friendsFetch ?
+                    <div style={nightMode ? nightModeStyles.centerBlock : null} className={'friends-page-container'}>
+                         <div className={'friends-page-title-block'}>
+                              <p className={'friends-page-title'}>You are following {friends.length} Users</p>
+                              <hr className={'friends-page-hr'} />
+                         </div>
+                         <div className={'friends-list-grid'}>
+                              {friends.map((friend, index) => <div key={index} className={'friend-block'}>
+                                   <NavLink>
+                                        <img className={'friend-avatar'}
+                                             src={friend.photos.large ? friend.photos.large : defaultAvatar}
+                                             alt='user-avatar' />
+                                   </NavLink>
+                                   <div className={'friend-data-block'}>
+                                        <p className={'friend-name'}
+                                           title={friend.name}>{truncateUserData(friend.name)}</p>
+                                        <p className={'friend-status'}
+                                           title={friend.status}>{friend.status ? truncateUserData(friend.status) : 'No status'}</p>
+                                        <button onClick={() => handleUnfollowFriend(friend.id)}
+                                                className={'friend-unfollow-btn'}>Unfollow
+                                        </button>
+                                   </div>
+                              </div>)}
+                         </div>
+                    </div> : <div className={'friends-page-container'}>{fetchUsers}</div>}
+
+          </>
      )
 }
 
