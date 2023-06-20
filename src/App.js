@@ -17,6 +17,7 @@ const App = () => {
      const nightMode = useSelector(state => state.settings.nightMode)
      const isLogged = useSelector(state => state.auth.isLogged)
      const initialized = useSelector(state => state.app.initialized)
+     const showMobileLayout = useSelector(state => state.settings.showMobileVersion)
 
      useEffect(() => {
           if (nightMode) {
@@ -38,7 +39,7 @@ const App = () => {
 
      return (
           <BrowserRouter>
-               <div className={'wrapper'}>
+               <div style={{ width: showMobileLayout ? '800px' : void 0 }} className={'wrapper'}>
                     {isLogged && <HeaderContainer {...{ dispatch }} />}
                     <section style={nightMode ? nightModeStyles.section : null}
                              className={isLogged && 'section-content'}>
