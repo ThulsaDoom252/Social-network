@@ -8,9 +8,8 @@ const Initialize = () => {
                 <img src={initializing} alt="app is initializing"/>
             </div>
         </div>
-
-
     );
 }
 
 export default Initialize;
+

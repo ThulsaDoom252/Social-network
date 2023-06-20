@@ -56,7 +56,6 @@ const App = () => {
                     </section>
                </div>
           </BrowserRouter>
-
      )
 }
 export default App
