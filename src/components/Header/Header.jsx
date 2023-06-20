@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import defaultAvatar from '../common/default-avatar.jfif'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
+import { ImUsers } from 'react-icons/im'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
      const navButtonsClass = 'header-navbar-button'
@@ -26,6 +27,9 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/settings'}><IoSettingsOutline />Settings</NavLink>
+                    <NavLink
+                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
+                         to={'/users'}><ImUsers />Users</NavLink>
                </div>
           </header>
      )
