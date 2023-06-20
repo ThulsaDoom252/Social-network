@@ -8,7 +8,7 @@ const About = () => {
                <div className='content'>
                     <h1 className='title'>Samurai's Social Network</h1>
                     <p className='developer'>Developer: ThulsaDoom</p>
-                    <p className='version'>Current Version: 1.1</p>
+                    <p className='version'>Current Version: 1.2</p>
                     <p className='functionality'>
                          Functionality:
                          <br />
@@ -21,6 +21,8 @@ const About = () => {
                          - Preview of mobile version
                          <br />
                          - Add/Remove friends
+                         <br />
+                         - Messages (non-functioning)
                     </p>
                </div>
           </div>

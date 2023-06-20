@@ -1,7 +1,6 @@
-The best social network in the world.
-v 1.0
+### The best social network in the world.
 
-Current Version: 1.1
+Current Version: 1.2
 
 Developer: ThulsaDoom
 
@@ -12,3 +11,4 @@ Functionality:
 - Night mode
 - Preview of mobile version
 - Add/Remove Friends
+- Messages (non-functioning)
