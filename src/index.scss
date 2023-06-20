@@ -1,6 +1,8 @@
-@import "styles/nullStyles";
-@import "styles/templates";
-@import "styles/mixins";
+@import "./styles/nullStyles";
+@import "./styles/templates";
+@import "./styles/mixins";
+@import "./styles/settings";
+@import "./styles/header";
 
 /*MAIN CONTAINERS*/
 .wrapper {
@@ -9,13 +11,10 @@
 }
 
 .section-content {
-  /*min-height: 730px;*/
   width: 100%;
   transition: 0.5s;
   text-align: center;
   background: linear-gradient(360deg, #6868ff, #3c91ff, #37a6c7, #70d3ef);
-  /*background: linear-gradient(400deg, #0e1f42, #1e071e, darkblue, #0d0d4b);*/
-
 }
 
 .container {
@@ -24,3 +23,6 @@
   @include sizeMx(100vw, 100vh);
   @extend %centeredColumnFlexDisplay;
 }
+
+
+

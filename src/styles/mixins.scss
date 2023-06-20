@@ -15,6 +15,13 @@
   max-height: $maxHeight;
 }
 
+@mixin backgroundMx($url, $size, $position, $repeat) {
+  background: $url;
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
 @mixin colorsMx($color, $background) {
   color: $color;
   background: $background;
