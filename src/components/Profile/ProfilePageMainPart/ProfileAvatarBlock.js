@@ -15,7 +15,6 @@ const ProfileAvatarBlock = ({
           handleContactBlockEditMode, contactsData, pointerCursor, hiddenFileInput, avatar, nameDataFetch,
           nameDataUploadStatus, handleFollowUser, isCurrentProfileFollowed, followUserFetch, userId] = profileAvatarProps
 
-     //Edit contacts  - temporary disabled
 
      return (
           <div className='profile-page-center-avatarBlockContainer'>
@@ -54,10 +53,10 @@ const ProfileAvatarBlock = ({
                              {contact.icon}</Link> : contact.icon}
                         </span>)}
                          </div>
-                         {/*{directEditMode && isCurrentUser ? <p*/}
-                         {/*     className={'direct-contact-edit-button'}*/}
-                         {/*     style={{ 'cursor': 'pointer' }}*/}
-                         {/*     onClick={() => toggleProfileDataEditMode(contactsBlockEditMode, setContactsBlockEditMode)}>{contactsBlockEditMode ? 'Choose contacts to edit' : 'Edit Contacts'}</p> : null}*/}
+                         {directEditMode && isCurrentUser ? <p
+                              className={'direct-contact-edit-button'}
+                              style={{ 'cursor': 'pointer' }}
+                              onClick={() => toggleProfileDataEditMode(contactsBlockEditMode, setContactsBlockEditMode)}>{contactsBlockEditMode ? 'Choose contacts to edit' : 'Edit Contacts'}</p> : null}
                     </div>
                     {!isCurrentUser &&
                          <button disabled={followUserFetch === userId}

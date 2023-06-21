@@ -13,7 +13,7 @@ const ProfilePageMainPart = ({
                                   directEditMode,
                                   defaultAvatar,
                                   userPhotos,
-                                  showOverlayAC,
+                                  toggleOverlay,
                                   friends,
                                   nightMode,
                                   showMobileVersion,
@@ -26,7 +26,6 @@ const ProfilePageMainPart = ({
      if (notFound) {
           return <NotFound />
      }
-     //Implement view mobile photos in Overlay
 
      return (
           <div style={nightMode ? nightModeStyles.centerBlock : null} className={'center-part-block'}>
@@ -54,12 +53,12 @@ const ProfilePageMainPart = ({
                          <NavLink to={'/friends'} className={'center-friends-button'}>...</NavLink>
                     </div>}
                {isCurrentUser &&
-                    <div style={{ 'display': showMobileVersion && 'block' }} className={'mobile-gallery-block'}>
+                    <div style={{ 'display': showMobileVersion && 'block' }} className={'profile-mobile-gallery-block'}>
                          <div className={'photos-block'}>
-                              {userPhotos.map((photo, index) => <div className={'center-gallery-photo-block'}
+                              {userPhotos.map((photo, index) => <div className={'profile-mobile-photo-block'}
                                                                      key={index}>{index < 4 &&
                                    <img className={'center-gallery-photo'}
-                                        onClick={() => showOverlayAC({
+                                        onClick={() => toggleOverlay({
                                              toggleRelay: true,
                                              toggleViewPort: true,
                                              index

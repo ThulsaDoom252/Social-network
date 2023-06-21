@@ -23,7 +23,7 @@ const ProfilePageRightPart = ({
                               title={'Photos are hardcoded. You can\'t handle photos..yet'} /></NavLink>
                     </p>
                     {userPhotos.map((photo, index) => <span key={index}>
-                    <img
+                    <img onClick={() => handleSelectedPhoto(index)}
                          key={index}
                          className={'profile-page-right-part-photo'}
                          src={require(`../../redux/profile/${photo}`)} alt='default-photo' />

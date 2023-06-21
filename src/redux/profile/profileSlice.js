@@ -129,6 +129,7 @@ const profileSlice = createSlice({
                return void 0
           },
           toggleOverlay(state, action) {
+               debugger
                const { showOverlay, showPhotoViewPort, index, contactId, contactValue } = action.payload
                state.showOverlay = showOverlay
                state.showOverlayPhotoViewport = showPhotoViewPort

@@ -293,7 +293,7 @@ const ProfilePageContainer = ({
                     <ProfilePageLeftPart {...{ profileLeftPartProps, commonProps }} />}
                <ProfilePageMainPart  {...{
                     fullName, largePhoto, isCurrentUser: isCurrentUsersPage, notFound, directEditMode, defaultAvatar,
-                    userPhotos, showOverlayAC: toggleOverlay, friends, nightMode,
+                    userPhotos, toggleOverlay, friends, nightMode,
                     updatePhotoTC: updateAvatarThunk, showMobileVersion, profileAvatarProps, statusProps,
                     profileDataProps
                }} />
