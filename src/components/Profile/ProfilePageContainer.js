@@ -4,10 +4,9 @@ import {
      setStatusThunk,
      setUserThunk,
      toggleOverlay,
-     updateProfileThunk,
      updateStatusThunk,
      updateAvatarThunk,
-     toggleIsCurrentProfileFollowed
+     toggleIsCurrentProfileFollowed, updateProfileThunk
 } from '../../redux/profile/profileSlice'
 import { followUserThunk, unfollowFriendThunk, unFollowUserThunk } from '../../redux/usersSlice'
 import * as Yup from 'yup'
@@ -24,7 +23,7 @@ const ProfilePageContainer = ({
                                    userIdRouterParam,
                                    unfollowFriendThunk,
                                    updateStatusThunk,
-                                   updatePhotoThunk,
+                                   updateAvatarThunk,
                                    followUserThunk,
                                    toggleIsCurrentProfileFollowed
                               }) => {
@@ -138,7 +137,7 @@ const ProfilePageContainer = ({
 
      ////////// Avatar & contacts block
      const hiddenFileInput = React.useRef(null)
-     const uploadPhoto = (e) => updatePhotoThunk(e.target.files[0])
+     const uploadPhoto = (e) => updateAvatarThunk(e.target.files[0])
      const handleAvatarClick = () => isCurrentUsersPage ? hiddenFileInput.current.click() : void 0
      const contactUrlError = Yup.string().matches(/((https?):\/\/)?(www.)?[a-z\d]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z\d#]+)*\/?(\?[a-zA-Z\d-_]+=[a-zA-Z\d-%]+&?)?$/, 'Enter correct url!').nullable()
      const avatarBlockFormik = useFormik({
@@ -280,7 +279,7 @@ const ProfilePageContainer = ({
           descriptionEditMode, setDescriptionEditMode, centerProfileAboutEditMode, setCenterProfileAboutEditMode,
           directEditFunc, jobDescriptionStyle, pointerCursor, aboutBlockStyle,
           isLookingForAJobDataFetch, isLookingForAJobDataUploadStatus, jobDescriptionDataFetch, jobDescriptionDataUploadStatus,
-          handleChangeIsLookingForAJobInfo, showMobileVersion, aboutDataUploadStatus,
+          handleChangeIsLookingForAJobInfo, showMobileVersion, aboutDataUploadStatus
      ]
 
      //Right Part
@@ -289,13 +288,13 @@ const ProfilePageContainer = ({
      }
 
      return (
-          <div className={'profile-main-container'}>
+          <div className={'profile-page'}>
                {!showMobileVersion &&
                     <ProfilePageLeftPart {...{ profileLeftPartProps, commonProps }} />}
                <ProfilePageMainPart  {...{
                     fullName, largePhoto, isCurrentUser: isCurrentUsersPage, notFound, directEditMode, defaultAvatar,
                     userPhotos, showOverlayAC: toggleOverlay, friends, nightMode,
-                    updatePhotoTC: updatePhotoThunk, showMobileVersion, profileAvatarProps, statusProps,
+                    updatePhotoTC: updateAvatarThunk, showMobileVersion, profileAvatarProps, statusProps,
                     profileDataProps
                }} />
                {!showMobileVersion &&
@@ -309,9 +308,9 @@ const ProfilePageContainer = ({
 }
 
 export default connect(null, {
-          setUserThunk, setStatusThunk, toggleOverlay,
-          toggleIsCurrentProfileFollowed, updateProfileThunk, updateStatusThunk, followUserThunk, unFollowUserThunk,
-          unfollowFriendThunk, updateAvatarThunk
+          setUserThunk, setStatusThunk, toggleOverlay, updateAvatarThunk,
+          toggleIsCurrentProfileFollowed, updateStatusThunk, followUserThunk, unFollowUserThunk,
+          unfollowFriendThunk, updateProfileThunk
      }
 )(ProfilePageContainer)
 

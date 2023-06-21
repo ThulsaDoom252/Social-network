@@ -15,7 +15,6 @@ const ProfileAvatarBlock = ({
           handleContactBlockEditMode, contactsData, pointerCursor, hiddenFileInput, avatar, nameDataFetch,
           nameDataUploadStatus, handleFollowUser, isCurrentProfileFollowed, followUserFetch, userId] = profileAvatarProps
 
-
      //Edit contacts  - temporary disabled
 
      return (
@@ -44,10 +43,10 @@ const ProfileAvatarBlock = ({
                               {errors.fullName && <p className={'profile-page-input-error'}>{errors.fullName}</p>}
                          </div>
                          <Status  {...{ statusProps }} />
-                         <div className={'profile-page-left-contacts-block'}>
+                         <div className={'profile-contacts-block'}>
                               {contactsData.map(contact => <span style={{ 'color': !contact.value && 'gray' }}
                                                                  key={contact.id}
-                                                                 className={`profile-page-left-contact profile-page-left-contact-${contact.id}Icon`}>
+                                                                 className={`profile-contact profile-page-left-contact-${contact.id}Icon`}>
                         {contact ? <Link
                              style={{ 'cursor': !contact.value && 'default' }}
                              onClick={e => handleContactBlockEditMode(e, contact.id, contact.value)}

@@ -28,14 +28,15 @@ const ProfilePageMainPart = ({
      }
 
      // Edit profile data has no functionality
+     //Implement view mobile photos in Overlay
 
      return (
-          <div style={nightMode ? nightModeStyles.centerBlock : null} className={'profile-page-center-container'}>
-               <div className={'profile-page-center-bg'}>
-                    <NavLink hidden={directEditMode} className={'profile-page-edit-button'}>Edit
+          <div style={nightMode ? nightModeStyles.centerBlock : null} className={'center-part-block'}>
+               <div className={'center-bg'}>
+                    <NavLink hidden={directEditMode} className={'center-edit-btn'}>Edit
                          Profile</NavLink>
                </div>
-               <div className={'profile-page-center-userInfo-container'}>
+               <div className={'center-user-info-block'}>
                     <ProfileAvatarBlock {...{
                          isCurrentUser, directEditMode, defaultAvatar, profileAvatarProps, statusProps
                     }} />

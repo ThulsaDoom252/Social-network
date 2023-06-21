@@ -12,22 +12,22 @@ const EmptyProfilePageTemplate = ({showMobileVersion}) => {
     const marginTopStyle = {marginTop: "15px"}
 
     return (
-        <div className={"profile-main-container"}>
-            <div className={"profile-page-left-part-container"}>
-                <div className={"profile-page-left-part-userData"}>
+        <div className={"profile-page"}>
+            <div className={"profile-left-part-block"}>
+                <div className={"left-part-userData"}>
                     <div>
-                        <span className={"profile-page-left-part-label"}></span>
+                        <span className={"left-part-block-label"}></span>
                     </div>
                     <div
                         style={loadingAnimation}
-                        className={"profile-page-left-part-about-block"}>
-                        <span className={"profile-page-left-part-label"}></span>
+                        className={"left-part-about-block"}>
+                        <span className={"left-part-block-label"}></span>
                     </div>
                 </div>
             </div>
-            <div className={"profile-page-center-container"}>
-                <div className={"profile-page-center-bg"}></div>
-                <div className={"profile-page-center-userInfo-container"}>
+            <div className={"center-part-block"}>
+                <div className={"center-bg"}></div>
+                <div className={"center-user-info-block"}>
                     <div className="profile-page-center-avatarBlockContainer">
                         <div>
                             <img className="profile-page-avatar"
@@ -38,7 +38,7 @@ const EmptyProfilePageTemplate = ({showMobileVersion}) => {
                                 <div style={loadingAnimation} className="status-container">
                                 </div>
                             </div>
-                            <div className={"profile-page-left-contacts-block"}>
+                            <div className={"profile-contacts-block"}>
                             </div>
                         </div>
                     </div>
@@ -70,15 +70,15 @@ const EmptyProfilePageTemplate = ({showMobileVersion}) => {
                     </div>
                 </div>
             </div>
-            <div className={"profile-page-right-part-container"}>
-                <div className={"profile-page-right-part-photos-block"}>
+            <div className={"profile-page-right-part-block"}>
+                <div className={"right-part-photos-block"}>
                     <p className={"profile-page-right-part-photos-block-label"}></p>
                     <div style={{...marginTopStyle,...loadingAnimation}}></div>
                     <div style={{...marginTopStyle,...loadingAnimation}}></div>
                     <div style={{...marginTopStyle,...loadingAnimation}}></div>
                     <div style={{...marginTopStyle,...loadingAnimation}}></div>
                 </div>
-                <div className={"profile-page-right-part-friends-block"}>
+                <div className={"right-part-friends-block"}>
                     <div style={{...marginTopStyle, ...loadingAnimation}}
                          className={"profile-page-right-part-friend-block"}></div>
                     <div style={{...marginTopStyle, ...loadingAnimation}}

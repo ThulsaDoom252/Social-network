@@ -2,19 +2,17 @@
 @import "templates";
 @import "variables";
 
-
-
-.profile-main-container {
+.profile-page {
   display: flex;
   position: relative;
   justify-content: center;
   width: 100%;
   padding: 20px 10px 0 10px;
-  min-height: 80vh;
+  min-height: $minPageContainerHeight;
 }
 
 /*LEFT PART*/
-.profile-page-left-part-container {
+.profile-left-part-block {
   background: linear-gradient(400deg, #ffdddd, #ffe5bf, #fae5bb, #fce4cb);
   border-radius: 3px;
   width: 200px;
@@ -25,46 +23,120 @@
   padding: 10px;
 }
 
-.profile-page-left-part-userData {
+.left-part-userData {
   text-align: left;
   font-family: SansSerif;
   width: 100%;
 }
 
-.profile-page-left-part-userData div {
+.left-part-userData div {
   padding: 10px;
 }
 
-.profile-page-left-part-label {
+.left-part-block-label {
   display: flex;
   align-items: center;
   font-weight: bold;
   font-family: "Open Sans";
 }
 
-.edit-data-icon {
-  position: relative;
-  left: 5px;
+.left-part-edit-btn {
+  @include positionMx(relative, $left: 5px);
 }
 
-.profile-page-left-part-about-block {
+.left-part-about-block {
   word-wrap: break-word;
   width: 100%;
 }
 
-.about-input {
-  width: 100%;
+
+////Right part
+.profile-page-right-part-block {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  min-height: 100px;
 }
 
-.profile-page-left-part-button {
-  position: absolute;
-  right: 10px;
-  color: darkgray;
-  font-size: 2rem;
+.right-part-photos-block {
+  background: linear-gradient(400deg, #ffdddd, #ffe5bf, #fffaf7, #fce4cb);
+  min-height: 300px;
   text-align: center;
 }
 
-.profile-page-left-contacts-block {
+.right-part-friends-block {
+  background: linear-gradient(400deg, #ffdddd, #ffffff, #fae5bb, #fce4cb);
+  margin-top: 20px;
+  padding: 10px 10px 0 10px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.right-part-friend-block {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: left;
+  width: 150px;
+  border-bottom: solid gray thin
+}
+
+.right-part-friend-block-avatar {
+  width: 300px;
+}
+
+.right-part-friend-unfollow-btn {
+  background-color: #35a9fa;
+  position: relative;
+  padding: 3px;
+  font-family: "Open Sans";
+  border-radius: 5px;
+  left: 3px;
+  color: #ffffff;
+}
+
+.right-part-friend-unfollow-btn:disabled {
+  background-color: rgba(5, 206, 255, 0.5);
+}
+
+/*CENTER*/
+.center-part-block {
+  background: linear-gradient(300deg, #ffdddd, #e7abab, #fae5bb, #fce4cb);
+  width: 650px;
+  min-height: 500px;
+  font-family: "Open Sans";
+}
+
+.center-bg {
+  background: url("../components/Profile/ProfilePageMainPart/header-bg.webp");
+  background-size: 650px 280px;
+  background-position: 122px center;
+  height: 220px;
+  position: relative;
+}
+
+.center-edit-btn {
+  background-color: #5EE7C1FF;
+  color: white;
+  height: 40px;
+  width: 120px;
+  padding-top: 8px;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 8px;
+  right: 70px;
+}
+
+.center-user-info-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-contacts-block {
   color: #a99e9e;
   position: relative;
   font-size: 1.3rem;
@@ -72,7 +144,7 @@
   margin: 15px 0 0 0;
 }
 
-.profile-page-left-contact {
+.profile-contact {
   margin-right: 10px;
 }
 
@@ -102,93 +174,6 @@
 
 .profile-page-left-contact-githubIcon {
   color: #1e8f45;
-}
-
-/*RIGHT PART*/
-.profile-page-right-part-container {
-  width: 200px;
-  position: absolute;
-  right: 0;
-  min-height: 100px;
-}
-
-.profile-page-right-part-photos-block {
-  background: linear-gradient(400deg, #ffdddd, #ffe5bf, #fffaf7, #fce4cb);
-  min-height: 300px;
-  text-align: center;
-}
-
-.profile-page-right-part-friends-block {
-  background: linear-gradient(400deg, #ffdddd, #ffffff, #fae5bb, #fce4cb);
-  margin-top: 20px;
-  padding: 10px 10px 0 10px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-}
-
-.profile-page-right-friend-block {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  justify-content: left;
-  width: 150px;
-  border-bottom: solid gray thin
-}
-
-.profile-page-right-friend-avatar {
-  width: 300px;
-}
-
-.profile-page-right-unfollow-button {
-  background-color: #35a9fa;
-  position: relative;
-  padding: 3px;
-  font-family: "Open Sans";
-  border-radius: 5px;
-  left: 3px;
-  color: #ffffff;
-}
-
-.profile-page-right-unfollow-button:disabled {
-  background-color: rgba(5, 206, 255, 0.5);
-}
-
-/*CENTER*/
-.profile-page-center-container {
-  background: linear-gradient(300deg, #ffdddd, #e7abab, #fae5bb, #fce4cb);
-  width: 650px;
-  min-height: 500px;
-  font-family: "Open Sans";
-}
-
-.profile-page-center-bg {
-  background: url("../components/Profile/ProfilePageMainPart/header-bg.webp");
-  background-size: 650px 280px;
-  background-position: 122px center;
-  height: 220px;
-  position: relative;
-}
-
-.profile-page-edit-button {
-  background-color: #5EE7C1FF;
-  color: white;
-  height: 40px;
-  width: 120px;
-  padding-top: 8px;
-  letter-spacing: 1px;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  position: absolute;
-  bottom: 8px;
-  right: 70px;
-
-}
-
-.profile-page-center-userInfo-container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .mobile-friends-block {
@@ -485,7 +470,7 @@
   text-decoration: underline;
 }
 
-.profile-page-right-part-photos-block {
+.right-part-photos-block {
   padding: 2px;
 }
 

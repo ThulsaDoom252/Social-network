@@ -10,32 +10,32 @@ const ProfilePageLeftPart = ({profileLeftPartProps, commonProps}) => {
 
      return (
           <div style={nightMode ? nightModeStyles.profileLeft : null}
-               className={"profile-page-left-part-container"}>
-               <div className={"profile-page-left-part-userData"}>
+               className={"profile-left-part-block"}>
+               <div className={"left-part-userData"}>
                     <div>
-                         <span className={"profile-page-left-part-label"}>Id</span>
+                         <span className={"left-part-block-label"}>Id</span>
                          <p>{userId}</p>
                     </div>
                     <div
                          style={pointerCursor}
-                         className={"profile-page-left-part-about-block"}>
+                         className={"left-part-about-block"}>
                     <span
-                         className={"profile-page-left-part-label"}>About {directEditMode && !aboutEditMode && isCurrentUser &&
+                         className={"left-part-block-label"}>About {directEditMode && !aboutEditMode && isCurrentUser &&
                          <FaRegEdit
-                              className={"edit-data-icon"}
+                              className={"left-part-edit-btn"}
                               onClick={() => toggleAboutEditMode(aboutEditMode, setAboutEditMode)}
                          />}</span>
                          <p style={aboutBlockStyle} className={"profile-page-left-part-about"}>
                               {aboutEditMode ?
                                    <input id={"aboutMe"} onBlur={() => toggleAboutEditMode(aboutEditMode, setAboutEditMode)}
-                                          className={"about-input"} onChange={handleChange} type={"text"}
+                                          onChange={handleChange} type={"text"}
                                           value={values.aboutMe}
                                           autoFocus={true}/> : aboutDataFetch ? fetchUiSpin : values.aboutMe ? values.aboutMe : "no info"}</p>
                          {isCurrentUser && errors.about ? <p className={"error"}>{errors.about}</p> : null}
 
                     </div>
                     <div>
-                         <p className={"profile-page-left-part-label"}>Email</p>
+                         <p className={"left-part-block-label"}>Email</p>
                          {isCurrentUser ? email : "No email"}
                     </div>
                </div>
