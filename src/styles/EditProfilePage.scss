@@ -1,0 +1,243 @@
+@import "mixins";
+@import "variables";
+@import "templates";
+
+.edit-profile-page-container {
+  display: flex;
+  min-height: $minPageContainerHeight;
+  font-family: "Open Sans";
+  background-color: white;
+}
+
+.edit-profile-avatar-part {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 210px auto;
+  height: 100%;
+}
+
+.edit-profile-avatar {
+  padding: 10px;
+  width: 200px;
+  border-radius: 3px;
+}
+
+.upload-avatar-button {
+  padding: 10px;
+  background-color: #32c5d3;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+
+}
+
+.edit-profile-email {
+  padding: 10px;
+}
+
+.edit-profile-data-part {
+  background: url("../components/EditProfile/BG.png") no-repeat;
+  background-position-x: 170px;
+  background-position-y: 110px;
+  padding: 10px;
+  width: 50%;
+  text-align: left;
+  border-left: gray thin solid;
+  border-right: gray thin solid;
+}
+
+.edit-profile-mobile-avatar-block {
+  display: none;
+}
+
+.edit-profile-title {
+  position: relative;
+  left: 40px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+}
+
+.data-first-block {
+  display: flex;
+  position: relative;
+}
+
+.data-name-block, .data-about-block {
+  text-align: left;
+}
+
+
+.data-first-block-errors {
+  color: red;
+  position: relative;
+  height: 30px;
+  text-align: center;
+}
+
+.edit-error {
+  color: red;
+  position: absolute;
+  font-size: 0.85rem;
+  width: 210px;
+}
+
+.data-first-block div {
+  margin-top: 25px;
+  padding: 0 30px 0 30px;
+}
+
+.edit-profile-input, .edit-profile-job-description-input {
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  border: gray thin solid;
+}
+
+.edit-profile-input-error {
+  border: red solid 2px;
+}
+
+.data-second-block {
+  margin-top: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-profile-checkbox-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-profile-job-description-block {
+  padding-top: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.edit-profile-job-description-input {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.edit-profile-job-description-error {
+  color: red;
+  position: relative;
+  height: 30px;
+}
+
+.edit-profile-mobile-contacts-container {
+  display: none;
+}
+
+.applicant-label {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.submit-btn-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn-status {
+  position: absolute;
+  color: green;
+}
+
+.edit-profile-page-submit-btn {
+  margin-top: 110px;
+  background-color: #32c5d3;
+  cursor: pointer;
+  color: #ffffff;
+  width: 140px;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.edit-profile-page-submit-btn :active {
+  color: red;
+}
+
+.edit-profile-contacts-part {
+  width: 25%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans";
+}
+
+.edit-profile-page-contacts {
+  padding: 20px;
+}
+
+.edit-profile-contact-title {
+  margin-top: 5px;
+  font-weight: bold;
+  width: 100%;
+  padding-left: 30px;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.edit-profile-contact-block {
+  margin: 20px auto;
+  text-align: left;
+}
+
+.data-label, .data-jobDescription-label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.data-jobDescription-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-jobDescription-hint {
+  position: relative;
+  left: 5px;
+  font-size: 1rem;
+}
+
+.data-jobDescription-hint:hover {
+  color: #f58502;
+  transition: 0.5ms;
+}
+
+.edit-profile-contact-input {
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+  width: 100%;
+  border: gray thin solid;
+}
+
+.contact-error-container {
+  color: red;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.contact-error {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.error {
+  color: red;
+}

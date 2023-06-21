@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Header'
 import { useSelector } from 'react-redux'
 import { setCurrentUserAvatarThunk } from '../../redux/profile/profileSlice'
@@ -10,9 +10,9 @@ const HeaderContainer = ({ dispatch }) => {
      const nightMode = useSelector(state => state.settings.nightMode)
      const userId = useSelector(state => state.auth.id)
      const currentUserAvatar = useSelector(state => state.profile.currentUserAvatar)
-     // useEffect(() => {
-     //      dispatch(setCurrentUserAvatarThunk(`${userId}`))
-     // }, [])
+     useEffect(() => {
+          dispatch(setCurrentUserAvatarThunk(`${userId}`))
+     }, [])
 
      const handleLogOut = async () => {
           dispatch(logOutThunk())

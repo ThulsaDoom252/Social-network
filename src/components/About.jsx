@@ -4,8 +4,8 @@ const About = () => {
      return (
           <div className='about-page'>
                <div className='content'>
-                    <h1 className='title'>Samurai's social network v1.5</h1>
-                    <p className='version'>Current Version: 1.5</p>
+                    <h1 className='title'>Samurai's social network</h1>
+                    <p className='version'>Current Version: 1.8</p>
                     <p className='developer'>Developer: ThulsaDoom</p>
                     <div className='functionality'>
                          <h3 className='functionality-title'>Functionality:</h3>
@@ -23,11 +23,13 @@ const About = () => {
                               <li className='functionality-item'>Add static user photos (not editable, can't be removed
                                    or added).
                               </li>
+                              <li className='functionality-item'> Edit personal information (directly on profile page or
+                                   at separate edit-profile page)>
+                              </li>
                          </ul>
                     </div>
                     <div className='user-edit-data'>
-                         <h4 className='edit-data-title'>User can edit the following data (only in direct edit
-                              mode):</h4>
+                         <h4 className='edit-data-title'>User can edit the following data :</h4>
                          <ul className={'functionality-list'}>
                               <li className='functionality-item'>Personal info</li>
                               <li className='functionality-item'>User-name</li>
