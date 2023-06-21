@@ -138,7 +138,7 @@ const ProfilePageContainer = ({
      ////////// Avatar & contacts block
      const hiddenFileInput = React.useRef(null)
      const uploadPhoto = (e) => updateAvatarThunk(e.target.files[0])
-     const handleAvatarClick = () => isCurrentUsersPage ? hiddenFileInput.current.click() : void 0
+     const handleAvatarClick = () => isCurrentUsersPage && directEditMode ? hiddenFileInput.current.click() : void 0
      const contactUrlError = Yup.string().matches(/((https?):\/\/)?(www.)?[a-z\d]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z\d#]+)*\/?(\?[a-zA-Z\d-_]+=[a-zA-Z\d-%]+&?)?$/, 'Enter correct url!').nullable()
      const avatarBlockFormik = useFormik({
           initialValues: {

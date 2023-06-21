@@ -7,11 +7,11 @@ const EditProfileDataEmptyTemplate = () => {
           <form>
                <div className={'edit-profile-page-container'}>
                     <div className={'edit-profile-avatar-part'}>
-                         <p style={{ 'font-size': '1.2rem' }}>Edit Photo</p>
+                         <p style={{ 'fontSize': '1.2rem' }}>Edit Photo</p>
                          <img className={'edit-profile-avatar'} src={noAvatar} alt='edit-avatar' />
                          <button disabled={true} type='button' className={'upload-avatar-button'}>Loading...
                          </button>
-                         <p className={'edit-profile-email'}>{fetchUiBar}</p>
+                         <i className={'edit-profile-email'}>{fetchUiBar}</i>
                     </div>
                     <div className={'edit-profile-data-part'}>
                          <p className={'edit-profile-title'}>Edit Profile</p>
@@ -22,25 +22,22 @@ const EditProfileDataEmptyTemplate = () => {
                          </div>
                          <div className={'data-first-block'}>
                               <div className={'data-name-block'}>
-                                   <input id={'name'} type='text' className={'edit-profile-input'} placeholder={'Name'}
-                                          value='loading...' />
+                                   <span className={'edit-profile-input'}>Loading...</span>
                               </div>
                               <div className={'data-about-block'}>
-                                   <input type='text'
-                                          className={'edit-profile-input'}
-                                          value={'loading...'} />
+                                   <span
+                                        className={'edit-profile-input'}>Loading...
+                                   </span>
                               </div>
                          </div>
                          <div className={'data-second-block'}>
                               <div className={'edit-profile-checkbox-block'}>
                                    <span className={'applicant-label'}>Are you looking for a job?</span>
-                                   <input type='checkbox' checked={false} />
+                                   <span>Loading...</span>
                               </div>
                               <div className={'edit-profile-job-description-block'} hidden={true}>
                                    <p className={'job-description-label'}>Enter job description</p>
-                                   <input id={'description'} type='text'
-                                          className={'edit-profile-job-description-input'}
-                                          value={'loading...'} />
+                                   <span className={'edit-profile-job-description-input'}>Loading...</span>
                                    <div className={'edit-profile-mobile-contacts-container'}>
                                         <p>Your contacts</p>
                                         <div className='edit-profile-mobile-contacts-block'>

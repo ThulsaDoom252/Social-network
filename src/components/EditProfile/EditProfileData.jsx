@@ -21,7 +21,7 @@ const EditProfileData = ({
           <form onSubmit={handleSubmit}>
                <div className={'edit-profile-page-container'}>
                     <div className={'edit-profile-avatar-part'}>
-                         <p style={{ 'font-size': '1.2rem' }}>Edit Photo</p>
+                         <p style={{ 'fontSize': '1.2rem' }}>Edit Photo</p>
                          <img className={'edit-profile-avatar'} src={largePhoto} alt='edit-avatar' />
                          <input ref={hiddenFileInput}
                                 hidden={true} type={'file'}
@@ -91,7 +91,7 @@ const EditProfileData = ({
                                    <div className={'edit-profile-mobile-contacts-container'}>
                                         <p>Your contacts</p>
                                         <div className='edit-profile-mobile-contacts-block'>
-                                             {contactsData.map(contact => <input id={contact.id}
+                                             {contactsData.map(contact => <input id={contact.id} key={contact.id}
                                                                                  onChange={contact.change}
                                                                                  className={'edit-profile-mobile-contact-input'}
                                                                                  type={'text'} value={contact.value}
@@ -114,7 +114,7 @@ const EditProfileData = ({
                          <p className={'edit-profile-contact-title'}>Edit your Contacts</p>
                          <div className={'edit-profile-page-contacts'}>
                               {contactsData.map(contact =>
-                                   <div className={'edit-profile-contact-block'}>
+                                   <div className={'edit-profile-contact-block'} key={contact.id}>
                                         <p className={'data-label'}>{contact.id}</p>
                                         <input id={contact.id} onChange={contact.change}
                                                className={'edit-profile-contact-input'}
