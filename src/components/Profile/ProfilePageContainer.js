@@ -112,7 +112,7 @@ const ProfilePageContainer = ({
 
      const profileLeftPartProps = [aboutFormik.values, aboutFormik.errors, aboutFormik.handleChange,
           aboutEditMode, setAboutEditMode, email, toggleAboutEditMode, aboutBlockStyle, aboutDataFetch]
-     const commonProps = [isCurrentUsersPage, pointerCursor, nightMode, currentUserId, notFound, directEditMode]
+     const commonProps = [isCurrentUsersPage, pointerCursor, nightMode, userId, notFound, directEditMode]
 
      //////Status block
      const [statusEditMode, setStatusEditMode] = useState(false)
