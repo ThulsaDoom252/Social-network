@@ -4,6 +4,29 @@
   display: flex;
   justify-content: center;
   min-height: $minPageContainerHeight;
+  font-family: Candara;
+  background-color: #d2c4c4;
+
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.version, .developer {
+  font-size: 1.1rem;
+}
+
+.version {
+  margin: 30px auto 20px auto;
+}
+
+.functionality-title {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-style: oblique;
 }
 
 .content {
@@ -12,32 +35,23 @@
   text-align: center;
 }
 
-.title {
-  font-size: 24px;
-  margin-top: 0;
-}
-
-.version,
-.developer {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.functionality-title,
-.edit-data-title {
-  font-size: 18px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-ul {
-  text-align: left;
+.functionality-list {
+  text-align: center;
   list-style-type: none;
   padding: 0;
 }
 
-li {
-  margin-bottom: 5px;
+.functionality-item {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.edit-data-title {
+  font-size: 1.2rem;
+  font-style: oblique;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 ul li::before {
@@ -45,7 +59,3 @@ ul li::before {
   margin-right: 5px;
 }
 
-.functionality ul,
-.user-edit-data ul {
-  text-align: center;
-}
