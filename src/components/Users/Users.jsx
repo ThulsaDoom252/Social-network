@@ -1,5 +1,6 @@
 import React from 'react'
 import { truncateUserData } from '../../common/commonFuncs'
+import { NavLink } from 'react-router-dom'
 
 const Users = ({
                     users,
@@ -14,13 +15,13 @@ const Users = ({
                <div className='users-list-grid'>
                     {users.map(user =>
                          <div className='user-block' key={user.id}>
-                              <div>
+                              <NavLink to={`/profile/${user.id}`}>
                                    <div className={'user-avatar-item'}>
                                         <img className={'user-avatar'}
                                              alt={'profile-picture'}
                                              src={user.photos.large ? user.photos.large : defaultUserAvatar} />
                                    </div>
-                              </div>
+                              </NavLink>
                               <div className={'user-data-block'}>
                                    <p className={'users-page-user-name'}
                                       title={user.name}>{truncateUserData(user.name)}</p>

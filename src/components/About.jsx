@@ -1,38 +1,38 @@
-import React from 'react'
-import authHoc from './HOC/authHoc'
-import { connect } from 'react-redux'
+import React from 'react';
 
 const About = () => {
      return (
           <div className='about-page'>
                <div className='content'>
-                    <h1 className='title'>Samurai's Social Network</h1>
+                    <h1 className='title'>Samurai's social network v1.5</h1>
+                    <p className='version'>Current Version: 1.5</p>
                     <p className='developer'>Developer: ThulsaDoom</p>
-                    <p className='version'>Current Version: 1.2</p>
-                    <p className='functionality'>
-                         Functionality:
-                         <br />
-                         - User list browsing
-                         <br />
-                         - Registration and login
-                         <br />
-                         - Night mode
-                         <br />
-                         - Preview of mobile version
-                         <br />
-                         - Add/Remove friends
-                         <br />
-                         - Messages (non-functioning)
-                    </p>
+                    <div className='functionality'>
+                         <h3 className='functionality-title'>Functionality:</h3>
+                         <ul>
+                              <li>User list browsing</li>
+                              <li>Registration and login</li>
+                              <li>Night mode</li>
+                              <li>Preview of mobile version</li>
+                              <li>Add/Remove Friends</li>
+                              <li>Messages (non-functioning, static-only)</li>
+                              <li>Edit Status</li>
+                              <li>User can be followed/unfollowed directly from the profile page.</li>
+                              <li>Add static user photos (not editable, can't be removed or added).</li>
+                         </ul>
+                    </div>
+                    <div className='user-edit-data'>
+                         <h4 className='edit-data-title'>User can edit the following data (only in direct edit mode):</h4>
+                         <ul>
+                              <li>Personal info</li>
+                              <li>User-name</li>
+                              <li>Is user looking for a job or not</li>
+                              <li>Skills/desired job description</li>
+                         </ul>
+                    </div>
                </div>
           </div>
-     )
-}
+     );
+};
 
-const mapStateToProps = state => {
-     return {
-          auth: state.auth.isLogged
-     }
-}
-
-export default connect(mapStateToProps, null)(authHoc(About))
+export default About;

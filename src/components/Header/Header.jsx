@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import defaultAvatar from '../common/default-avatar.jfif'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
-import { ImUsers } from 'react-icons/im'
+import { ImProfile, ImUsers } from 'react-icons/im'
 import { TfiInfoAlt } from 'react-icons/tfi'
 import { HiUsers } from 'react-icons/hi'
 import { BiMessageSquareDots } from 'react-icons/bi'
@@ -27,6 +27,9 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                     </button>
                </div>
                <div className={'navbar'}>
+                    <NavLink
+                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
+                         to={`/profile/${userId}`}><ImProfile />Profile</NavLink>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/messages'}><BiMessageSquareDots />Messages</NavLink>
