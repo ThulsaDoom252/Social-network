@@ -2,7 +2,6 @@
 @import "variables";
 @import "templates";
 
-
 .edit-profile-page-container {
   display: flex;
   min-height: 717px;
@@ -40,7 +39,7 @@
 }
 
 .edit-profile-data-part {
-  background: url("components/EditProfile/BG.png") no-repeat;
+  background: url("../components/EditProfile/BG.png") no-repeat;
   background-position-x: 170px;
   background-position-y: 110px;
   padding: 10px;

@@ -14,7 +14,7 @@ import About from './components/About'
 import FriendsContainer from './components/Friends/FriendsContainer'
 import MessagesContainer from './components/Messages/MessagesContainer'
 import ProfilePageRelay from './components/Profile/ProfilePageRelay'
-import EditProfileDataRelay from './components/EditProfilePage/EditProfileDataRelay'
+import EditProfileDataRelay from './components/EditProfile/EditProfileDataRelay'
 
 const App = () => {
      const dispatch = useDispatch()
