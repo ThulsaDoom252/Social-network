@@ -8,7 +8,8 @@ const Gallery = ({ handleOverlay, photos, nightMode }) => {
           <div style={nightMode ? nightModeStyles.centerBlock : null} className={'gallery-container'}>
                <p className={'gallery-photo-label'}>Your photos:</p>
                <div className={'gallery-photos-block'}>
-                    {photos.map((photo, index) => <div key={index} className={'photo-block'}><img
+                    {photos.map((photo, index) => <div key={index} className={'photo-block'}
+                                                       onClick={() => handleOverlay(index)}><img
                          className={'photo'} src={require(`../../redux/profile/${photo}`)} alt={`photo${index}`} />
                     </div>)}
                </div>

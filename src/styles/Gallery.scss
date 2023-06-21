@@ -3,9 +3,9 @@
 @import "templates";
 
 .gallery-container {
-  margin-top: 15px;
   font-family: SansSerif;
   background: linear-gradient(400deg, #c2c2fc, #dbdbff, #a2a2e1, #d5d5ff);
+  min-height: $minPageContainerHeight;
 }
 
 .gallery-photo-label {
@@ -16,8 +16,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  overflow-y: scroll;
-
 }
 
 .gallery-footer {

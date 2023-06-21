@@ -7,6 +7,7 @@ import Gallery from './Gallery'
 
 const GalleryContainer = ({ photos, dispatch, toggleOverlay, nightMode }) => {
      const handleOverlay = (index) => {
+          debugger
           dispatch(toggleOverlay({ showOverlay: true, showPhotoViewPort: true, index }))
      }
 
