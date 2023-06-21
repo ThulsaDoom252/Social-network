@@ -27,10 +27,12 @@ const ProfilePageMainPart = ({
           return <NotFound />
      }
 
+     // Edit profile data has no functionality
+
      return (
           <div style={nightMode ? nightModeStyles.centerBlock : null} className={'profile-page-center-container'}>
                <div className={'profile-page-center-bg'}>
-                    <NavLink hidden={directEditMode} to={'/edit'} className={'profile-page-edit-button'}>Edit
+                    <NavLink hidden={directEditMode} className={'profile-page-edit-button'}>Edit
                          Profile</NavLink>
                </div>
                <div className={'profile-page-center-userInfo-container'}>
@@ -43,9 +45,12 @@ const ProfilePageMainPart = ({
                     <div style={{ 'display': showMobileVersion && 'block' }} className={'mobile-friends-block'}>
                          <div className={'center-friends-block'}>
                               {friends.map((friend, index) => index < 4 &&
-                                   <div className={'center-friend-block'} key={index}><img
-                                        src={friend.photos.small ? friend.photos.small : defaultAvatar}
-                                        alt={`photo${index}`} /><p>{friend.name}</p></div>)}
+                                   <NavLink to={`/profile/ ${friend.id}`}>
+                                        <div className={'center-friend-block'} key={index}><img
+                                             src={friend.photos.small ? friend.photos.small : defaultAvatar}
+                                             alt={`photo${index}`} /><p>{friend.name}</p></div>
+                                   </NavLink>
+                              )}
                          </div>
                          <NavLink to={'/friends'} className={'center-friends-button'}>...</NavLink>
                     </div>}

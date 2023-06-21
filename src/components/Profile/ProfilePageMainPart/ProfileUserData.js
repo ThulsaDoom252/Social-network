@@ -1,7 +1,7 @@
 import React from 'react'
 import { aboutData, fetchUiSpin, lookingForAJobDataInfo } from '../../../common/commonData'
 
-const ProfileData = ({ isCurrentUser, profileDataProps }) => {
+const ProfileUserData = ({ isCurrentUser, profileDataProps }) => {
      const [handleChange, values, errors, toggleProfileEditMode,
           descriptionEditMode, setDescriptionEditMode, centerProfileAboutEditMode, setCenterProfileAboutEditMode,
           directEditFunc, jobDescriptionStyle, pointerCursor,
@@ -48,7 +48,7 @@ const ProfileData = ({ isCurrentUser, profileDataProps }) => {
      )
 }
 
-export default ProfileData
+export default ProfileUserData
 
 
 
