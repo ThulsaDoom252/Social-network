@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import HeaderContainer from './components/Header/HeaderContainer'
 import SettingsContainer from './components/Settings/SettingsContainer'
 import { useDispatch, useSelector } from 'react-redux'

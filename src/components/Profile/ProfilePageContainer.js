@@ -15,6 +15,7 @@ import { useFormik } from 'formik'
 import { getContactIcon } from '../../common/commonFuncs'
 import { aboutData, isLookingForAJobData } from '../../common/commonData'
 import ProfilePageLeftPart from './ProfilePageLeftPart'
+import ProfilePageMainPart from './ProfilePageMainPart/ProfilePageMainPart'
 
 const ProfilePageContainer = ({
                                    updateProfileThunk,
@@ -290,6 +291,13 @@ const ProfilePageContainer = ({
           <div className={'profile-main-container'}>
                {!showMobileVersion &&
                     <ProfilePageLeftPart {...{ profileLeftPartProps, commonProps }} />}
+               <ProfilePageMainPart  {...{
+                    fullName, largePhoto, isCurrentUser: isCurrentUsersPage, notFound, directEditMode, defaultAvatar,
+                    userPhotos, showOverlayAC: toggleOverlay, friends, nightMode,
+                    updatePhotoTC: updatePhotoThunk, showMobileVersion, profileAvatarProps, statusProps,
+                    profileDataProps
+               }} />
+
           </div>
      )
 }
