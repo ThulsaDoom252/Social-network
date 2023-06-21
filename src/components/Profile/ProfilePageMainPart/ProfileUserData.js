@@ -1,13 +1,15 @@
 import React from 'react'
-import { fetchUiSpin, lookingForAJobDataInfo } from '../../../common/commonData'
+import { aboutData, fetchUiSpin, lookingForAJobDataInfo } from '../../../common/commonData'
 
 const ProfileData = ({ isCurrentUser, profileDataProps }) => {
      const [handleChange, values, errors, toggleProfileEditMode,
           descriptionEditMode, setDescriptionEditMode, centerProfileAboutEditMode, setCenterProfileAboutEditMode,
           directEditFunc, jobDescriptionStyle, pointerCursor,
           aboutBlockStyle, isLookingForAJobDataFetch, isLookingForAJobDataUploadStatus, jobDescriptionDataFetch, jobDescriptionDataUploadStatus,
-          handleChangeIsLookingForAJobInfo
+          handleChangeIsLookingForAJobInfo, showMobileVersion, aboutDataUploadStatus
      ] = profileDataProps
+
+     //About block render depends on showMobileVersion state
 
      return (
           <div>
@@ -30,14 +32,17 @@ const ProfileData = ({ isCurrentUser, profileDataProps }) => {
                </div>
                {errors.applicantDescription &&
                     <p className={'profile-page-input-error'}>{errors.applicantDescription}</p>}
-               <div style={aboutBlockStyle} className={'profile-data-block-about'}>
+
+               {showMobileVersion && <div style={aboutBlockStyle}
+                                          className={`profile-data-block-about ${aboutDataUploadStatus && 'profile-data-block-uploaded'}`}>
                     {centerProfileAboutEditMode ?
-                         <input id={'about'} className={'about-description-input'} onChange={handleChange}
-                                onBlur={() => toggleProfileEditMode(centerProfileAboutEditMode, setCenterProfileAboutEditMode)}
+                         <input id={'about'} className={'job-description-input'} onChange={handleChange}
+                                onBlur={() => toggleProfileEditMode(centerProfileAboutEditMode, setCenterProfileAboutEditMode, aboutData)}
                                 autoFocus={true}
                                 type='text' value={values.about} /> :
-                         <p className={'job-description'}
-                            onClick={() => toggleProfileEditMode(centerProfileAboutEditMode, setCenterProfileAboutEditMode)}>{values.about ? values.about : 'No info'}</p>}</div>
+                         <p style={pointerCursor} className={'job-description'}
+                            onClick={() => toggleProfileEditMode(centerProfileAboutEditMode, setCenterProfileAboutEditMode)}>{values.about ? values.about : 'No info'}</p>}</div>}
+
                {errors.about && <p className={'profile-page-input-error'}>{errors.about}</p>}
           </div>
      )

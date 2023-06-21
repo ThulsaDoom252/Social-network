@@ -280,7 +280,7 @@ const ProfilePageContainer = ({
           descriptionEditMode, setDescriptionEditMode, centerProfileAboutEditMode, setCenterProfileAboutEditMode,
           directEditFunc, jobDescriptionStyle, pointerCursor, aboutBlockStyle,
           isLookingForAJobDataFetch, isLookingForAJobDataUploadStatus, jobDescriptionDataFetch, jobDescriptionDataUploadStatus,
-          handleChangeIsLookingForAJobInfo
+          handleChangeIsLookingForAJobInfo, showMobileVersion, aboutDataUploadStatus,
      ]
 
      //Right Part
