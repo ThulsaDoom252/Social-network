@@ -1,11 +1,8 @@
 import React from 'react'
+import EditProfileDataContainer from './EditProfileDataContainer'
 
 const EditProfileDataRelay = () => {
-     return (
-          <div>
-              
-          </div>
-     )
+     return <EditProfileDataContainer />
 }
 
 export default EditProfileDataRelay
