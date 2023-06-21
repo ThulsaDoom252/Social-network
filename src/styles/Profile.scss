@@ -247,7 +247,7 @@
   cursor: pointer;
 }
 
-.user-data-block, .user-data-block-about {
+.profile-data-block, .profile-data-block-about {
   font-family: SansSerif;
   font-size: 1.2rem;
   display: flex;
@@ -263,13 +263,13 @@
   word-wrap: break-word;
 }
 
-.user-data-block-uploaded {
+.profile-data-block-uploaded {
   background-color: rgba(0, 255, 247, 0.5);
   border-radius: 5px;
   transition: background-color 150ms ease-out;
 }
 
-.user-data-block-about {
+.profile-data-block-about {
   display: none;
 }
 

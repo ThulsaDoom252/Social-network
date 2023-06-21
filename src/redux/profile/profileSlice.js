@@ -175,6 +175,7 @@ export const setUserThunk = createAsyncThunk('set-user-thunk', async ({
      dispatch(toggleUserDataFetch(true))
      dispatch(toggleProfileDataUpdateStatus(false))
      const userData = await apiCaller.setUsers(userId)
+     debugger
      if (userData.status === 200) {
           dispatch(setUserProfile({ profile: userData.data, friends }))
           if (userData.data.userId === userId) {

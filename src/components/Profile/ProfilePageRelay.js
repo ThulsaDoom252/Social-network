@@ -3,7 +3,7 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import authHoc from '../HOC/authHoc'
 import withRouter from '../HOC/withRouter'
-import ProfileContainer from './ProfileContainer'
+import ProfilePageContainer from './ProfilePageContainer'
 import { initializeProfileThunk } from '../../redux/appSlice'
 import EmptyProfilePageTemplate from './EmptyProfilePageTemplate'
 import NotFound from '../common/NotFound'
@@ -15,7 +15,7 @@ const ProfilePageRelay = (props, { showMobileVersion }) => {
           friendsCount,
           profile,
           profileDataUpdated,
-          profilePageNotFound,
+          profilePageNotFound
      } = props
      const userIdRouterParam = props.router.params.userId
      const { userId } = profile
@@ -36,7 +36,7 @@ const ProfilePageRelay = (props, { showMobileVersion }) => {
      if (!props.profileInitialized) return <EmptyProfilePageTemplate {...{ showMobileVersion }} />
 
      return (
-          <ProfileContainer {...{ userIdRouterParam }} />
+          <ProfilePageContainer {...{ userIdRouterParam }} />
      )
 }
 

@@ -43,11 +43,11 @@ const EmptyProfilePageTemplate = ({showMobileVersion}) => {
                         </div>
                     </div>
                     <div>
-                        <div style={loadingAnimation} className={"user-data-block"}>
+                        <div style={loadingAnimation} className={"profile-data-block"}>
                         </div>
-                        <div style={loadingAnimation} className={"user-data-block"}>
+                        <div style={loadingAnimation} className={"profile-data-block"}>
                         </div>
-                        <div className={"user-data-block-about"} style={loadingAnimation}></div>
+                        <div className={"profile-data-block-about"} style={loadingAnimation}></div>
                     </div>
                 </div>
                 {<div style={{"display": showMobileVersion && "block", ...loadingAnimation}}
