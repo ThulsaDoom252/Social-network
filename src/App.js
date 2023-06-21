@@ -15,6 +15,7 @@ import FriendsContainer from './components/Friends/FriendsContainer'
 import MessagesContainer from './components/Messages/MessagesContainer'
 import ProfilePageRelay from './components/Profile/ProfilePageRelay'
 import EditProfileDataRelay from './components/EditProfile/EditProfileDataRelay'
+import GalleryContainer from './components/Gallery/GalleryContainer'
 
 const App = () => {
      const dispatch = useDispatch()
@@ -55,6 +56,7 @@ const App = () => {
                               <Route path={'/edit'} element={<EditProfileDataRelay />} />
                               <Route path={'/messages'} element={<MessagesContainer {...{ nightMode }} />} />
                               <Route path={'/friends'} element={<FriendsContainer {...{ nightMode }} />} />
+                              <Route path={'/gallery'} element={<GalleryContainer {...{ nightMode }} />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/users'} element={<UsersRelay />} />
                               <Route path={'/about'} element={<About />} />

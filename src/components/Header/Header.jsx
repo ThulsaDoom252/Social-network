@@ -4,9 +4,10 @@ import defaultAvatar from '../common/default-avatar.jfif'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { ImProfile, ImUsers } from 'react-icons/im'
-import { TfiInfoAlt } from 'react-icons/tfi'
+import { TfiGallery, TfiInfoAlt } from 'react-icons/tfi'
 import { HiUsers } from 'react-icons/hi'
 import { BiMessageSquareDots } from 'react-icons/bi'
+import { GrGallery } from 'react-icons/gr'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
      const navButtonsClass = 'navbar-btn'
@@ -36,6 +37,9 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/friends'}><HiUsers />Friends</NavLink>
+                    <NavLink
+                         className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
+                         to={'/gallery'}><TfiGallery />Gallery</NavLink>
                     <NavLink
                          className={state => state.isActive ? navButtonsActiveClass : navButtonsClass}
                          to={'/settings'}><IoSettingsOutline />Settings</NavLink>
