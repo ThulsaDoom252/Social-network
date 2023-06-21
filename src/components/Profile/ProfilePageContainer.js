@@ -16,6 +16,7 @@ import { getContactIcon } from '../../common/commonFuncs'
 import { aboutData, isLookingForAJobData } from '../../common/commonData'
 import ProfilePageLeftPart from './ProfilePageLeftPart'
 import ProfilePageMainPart from './ProfilePageMainPart/ProfilePageMainPart'
+import ProfilePageRightPart from './ProfilePageRightPart'
 
 const ProfilePageContainer = ({
                                    updateProfileThunk,
@@ -297,6 +298,11 @@ const ProfilePageContainer = ({
                     updatePhotoTC: updatePhotoThunk, showMobileVersion, profileAvatarProps, statusProps,
                     profileDataProps
                }} />
+               {!showMobileVersion &&
+                    <ProfilePageRightPart {...{
+                         defaultAvatar, friends, userPhotos, handleSelectedPhoto,
+                         nightMode, followUserFetch, userId, handleFollowUser
+                    }} />}
 
           </div>
      )
