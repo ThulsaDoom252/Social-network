@@ -16,10 +16,10 @@ const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
                <div className={'header-current-user-block'}>
                     <div className={'header-avatar-item'}>
                          <img className={'header-avatar'}
-                              src={defaultAvatar}
+                              src={currentUserAvatar ? currentUserAvatar : defaultAvatar}
                               alt={'user-avatar'} />
                     </div>
-                    <span className={'header-user-name'}>'ThulsaDoom'</span>
+                    <NavLink to={`/profile/${userId}`} className={'header-user-name'}>{userName}</NavLink>
                     <button title='logout' className={'logOut-btn'}
                             onClick={handleLogOut}>
                          <RiLogoutBoxRLine />
