@@ -1,6 +1,6 @@
 ### The best social network in the world.
 
-Current Version: 1.2
+Current Version: 1.5
 
 Developer: ThulsaDoom
 
@@ -17,6 +17,7 @@ Functionality:
 - Add static user photos (not editable, can't be removed or added).
 
 #### User can edit following data (only in direct edit mode):
+
 - Personal info
 - User-name
 - Is user looking for a job or not
