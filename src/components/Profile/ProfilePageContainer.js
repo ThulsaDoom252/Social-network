@@ -14,7 +14,7 @@ import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { getContactIcon } from '../../common/commonFuncs'
 import { aboutData, isLookingForAJobData } from '../../common/commonData'
-import Profile from './Profile'
+import ProfilePageLeftPart from './ProfilePageLeftPart'
 
 const ProfilePageContainer = ({
                                    updateProfileThunk,
@@ -286,7 +286,12 @@ const ProfilePageContainer = ({
           toggleOverlay({ showOverlay: true, showPhotoViewPort: true, index })
      }
 
-     return <Profile />
+     return (
+          <div className={'profile-main-container'}>
+               {!showMobileVersion &&
+                    <ProfilePageLeftPart {...{ profileLeftPartProps, commonProps }} />}
+          </div>
+     )
 }
 
 export default connect(null, {
