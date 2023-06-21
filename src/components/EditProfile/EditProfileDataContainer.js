@@ -2,7 +2,7 @@ import React from 'react'
 import EditProfileDataEmptyTemplate from './EditProfileDataEmptyTemplate'
 
 const EditProfileDataContainer = () => {
-     return <EditProfileDataEmptyTemplate />
+     return <div>EditProfile page</div>
 }
 
 export default EditProfileDataContainer
