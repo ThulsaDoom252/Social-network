@@ -15,7 +15,7 @@ const Friends = ({ nightMode, friends, handleUnfollowFriend, defaultAvatar, frie
                          </div>
                          <div className={'friends-list-grid'}>
                               {friends.map((friend, index) => <div key={index} className={'friend-block'}>
-                                   <NavLink>
+                                   <NavLink to={'/profile/' + friend.id}>
                                         <img className={'friend-avatar'}
                                              src={friend.photos.large ? friend.photos.large : defaultAvatar}
                                              alt='user-avatar' />

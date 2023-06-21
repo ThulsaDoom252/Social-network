@@ -223,8 +223,8 @@ export const updateProfileThunk = createAsyncThunk('update-profile-thunk',
             }, { dispatch, getState }) => {
 
           const state = getState()
-          const { userId, aboutMe, lookingForAJob, lookingForAJobDescription, fullName } = state.profilePage.profile
-          const [facebookState, websiteState, vkState, twitterState, instagramState, youtubeState, githubState, mainlinkState] = state.profilePage.contacts
+          const { userId, aboutMe, lookingForAJob, lookingForAJobDescription, fullName } = state.profile.profile
+          const [facebookState, websiteState, vkState, twitterState, instagramState, youtubeState, githubState, mainlinkState] = state.profile.contacts
           const aboutParam = about ? about : aboutMe
           const isApplicantParam = isApplicant !== undefined ? isApplicant : lookingForAJob
           const descriptionParam = description ? description : lookingForAJobDescription
