@@ -48,6 +48,7 @@ const App = () => {
                     {isLogged && <HeaderContainer {...{ dispatch }} />}
                     <section style={nightMode ? nightModeStyles.section : null}
                              className={isLogged && 'section-content'}>
+
                          <Routes>
                               <Route path={'/'} element={<Detour />} />
                               <Route path={'/profile/:userId'} element={<ProfilePageRelay />} />} />

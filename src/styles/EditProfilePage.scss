@@ -4,10 +4,9 @@
 
 .edit-profile-page-container {
   display: flex;
-  min-height: 717px;
+  min-height: $minPageContainerHeight;
   font-family: "Open Sans";
   background-color: white;
-  margin: 20px auto;
 }
 
 .edit-profile-avatar-part {
