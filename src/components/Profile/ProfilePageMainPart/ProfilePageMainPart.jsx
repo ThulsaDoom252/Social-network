@@ -45,8 +45,8 @@ const ProfilePageMainPart = ({
                     <div style={{ 'display': showMobileVersion && 'block' }} className={'mobile-friends-block'}>
                          <div className={'center-friends-block'}>
                               {friends.map((friend, index) => index < 4 &&
-                                   <NavLink to={`/profile/ ${friend.id}`}>
-                                        <div className={'center-friend-block'} key={index}><img
+                                   <NavLink to={`/profile/ ${friend.id}`} key={index}>
+                                        <div className={'center-friend-block'}><img
                                              src={friend.photos.small ? friend.photos.small : defaultAvatar}
                                              alt={`photo${index}`} /><p>{friend.name}</p></div>
                                    </NavLink>
@@ -65,7 +65,7 @@ const ProfilePageMainPart = ({
                                              toggleViewPort: true,
                                              index
                                         })}
-                                        src={photo}
+                                        src={require(`../../../redux/profile/${photo}`)}
                                         alt={`photo${index}`} />}</div>)}
                          </div>
                          <NavLink to={'/gallery'} className={'center-gallery-button'}>To gallery</NavLink>
