@@ -15,6 +15,8 @@ import FriendsContainer from './components/Friends/FriendsContainer'
 import MessagesContainer from './components/Messages/MessagesContainer'
 import ProfilePageRelay from './components/Profile/ProfilePageRelay'
 import EditProfileDataRelay from './components/EditProfile/EditProfileDataRelay'
+import GalleryContainer from './components/Gallery/GalleryContainer'
+import OverlayContainer from './components/Overlay/OverlayContainer'
 
 const App = () => {
      const dispatch = useDispatch()
@@ -22,6 +24,7 @@ const App = () => {
      const isLogged = useSelector(state => state.auth.isLogged)
      const initialized = useSelector(state => state.app.initialized)
      const showMobileLayout = useSelector(state => state.settings.showMobileVersion)
+     const overlayVisible = useSelector(state => state.profile.showOverlay)
 
 
      useEffect(() => {
@@ -45,6 +48,7 @@ const App = () => {
      return (
           <BrowserRouter>
                <div style={{ width: showMobileLayout ? '800px' : void 0 }} className={'wrapper'}>
+                    {overlayVisible && <OverlayContainer {...{ dispatch }} />}
                     {isLogged && <HeaderContainer {...{ dispatch }} />}
                     <section style={nightMode ? nightModeStyles.section : null}
                              className={isLogged && 'section-content'}>
@@ -55,6 +59,7 @@ const App = () => {
                               <Route path={'/edit'} element={<EditProfileDataRelay />} />
                               <Route path={'/messages'} element={<MessagesContainer {...{ nightMode }} />} />
                               <Route path={'/friends'} element={<FriendsContainer {...{ nightMode }} />} />
+                              <Route path={'/gallery'} element={<GalleryContainer {...{ nightMode, dispatch }} />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/users'} element={<UsersRelay />} />
                               <Route path={'/about'} element={<About />} />

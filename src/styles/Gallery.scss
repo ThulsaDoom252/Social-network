@@ -1,0 +1,32 @@
+@import "mixins";
+@import "variables";
+@import "templates";
+
+.gallery-container {
+  font-family: SansSerif;
+  background: linear-gradient(400deg, #c2c2fc, #dbdbff, #a2a2e1, #d5d5ff);
+  min-height: $minPageContainerHeight;
+}
+
+.gallery-photo-label {
+  font-size: 1.10rem;
+}
+
+.gallery-photos-block {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-footer {
+  height: auto;
+}
+
+.photo-block {
+  width: 270px;
+  padding: 5px 10px 5px 10px;
+}
+
+.photo {
+  cursor: pointer;
+}

@@ -1,0 +1,57 @@
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100vw; /* Full width (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.overlay-photo-item {
+  position: relative;
+  width: 700px;
+}
+
+.overlay-photo {
+  width: 100%;
+}
+
+.overlay-close-btn {
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.profile-contact-viewport {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.currently-viewing-contact {
+  background-color: white;
+  text-align: center;
+  height: 50px;
+}
+
+.currently-viewing-contact-submit-button-container {
+  margin: 5px 0 0 0;
+  text-align: center;
+}
+
+.overlay-contact-update-btn {
+  background-color: white;
+  border: black solid thin;
+  cursor: pointer;
+}

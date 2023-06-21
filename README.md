@@ -1,6 +1,6 @@
 ### The best social network in the world.
 
-Current Version: 1.8
+Current Version: 2.0
 
 Developer: ThulsaDoom
 
@@ -14,14 +14,16 @@ Functionality:
 - Messages (non-functioning, static-only)
 - Edit Status
 - User can be followed/unfollowed directly from the profile page.
-- Add static user photos (not editable, can't be removed or added).
+- Add static user photos (not editable, can be viewed, can't be removed or added).
 - Edit personal information (directly on profile page or at separate edit-profile page)
+- Edit Contacts directly from profile page.
 
 #### User can edit following data:
 - Personal info
 - User-name
 - Is user looking for a job or not
 - Skills/desired job description
+- Contacts
 
 
 
