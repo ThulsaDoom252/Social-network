@@ -14,7 +14,7 @@ import UsersRelay from './components/Users/UsersRelay'
 import About from './components/About'
 import FriendsContainer from './components/Friends/FriendsContainer'
 import MessagesContainer from './components/Messages/MessagesContainer'
-import ProfileContainer from './components/Profile/ProfileContainer'
+import ProfilePageRelay from './components/Profile/ProfilePageRelay'
 
 const App = () => {
      const dispatch = useDispatch()
@@ -50,7 +50,7 @@ const App = () => {
                              className={isLogged && 'section-content'}>
                          <Routes>
                               <Route path={'/'} element={<Detour />} />
-                              <Route path={'/profile/:userId'} element={<ProfileContainer {...{ nightMode }} />} />
+                              <Route path={'/profile/:userId'} element={<ProfilePageRelay />} />} />
                               <Route path={'/messages'} element={<MessagesContainer {...{ nightMode }} />} />
                               <Route path={'/friends'} element={<FriendsContainer {...{ nightMode }} />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
