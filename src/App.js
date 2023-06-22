@@ -51,8 +51,7 @@ const App = () => {
                     {overlayVisible && <OverlayContainer {...{ dispatch }} />}
                     {isLogged && <HeaderContainer {...{ dispatch }} />}
                     <section style={nightMode ? nightModeStyles.section : null}
-                             className={isLogged && 'section-content'}>
-
+                             className={isLogged ? 'section-content' : void 0}>
                          <Routes>
                               <Route path={'/'} element={<Detour />} />
                               <Route path={'/profile/:userId'} element={<ProfilePageRelay />} />} />

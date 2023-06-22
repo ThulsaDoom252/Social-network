@@ -12,7 +12,7 @@ const Users = ({
      return (
           <>
                <div className={'users-page-title'}>USERS: {totalCount}</div>
-               <div className='users-list-grid'>
+               <div className='users-list'>
                     {users.map(user =>
                          <div className='user-block' key={user.id}>
                               <NavLink to={`/profile/${user.id}`}>

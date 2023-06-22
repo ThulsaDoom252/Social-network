@@ -1,6 +1,6 @@
 import React from 'react'
 import Status from './Status'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { fetchUiSpin, nameData } from '../../../common/commonData'
 
 const ProfileAvatarBlock = ({
@@ -17,9 +17,9 @@ const ProfileAvatarBlock = ({
 
 
      return (
-          <div className='profile-page-center-avatarBlockContainer'>
+          <div className='profile-avatar-container'>
                <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className={'profile-avatar-block'}>
                          <input ref={hiddenFileInput}
                                 hidden={true} type={'file'}
                                 onChange={uploadPhoto} />
@@ -57,6 +57,10 @@ const ProfileAvatarBlock = ({
                               className={'direct-contact-edit-button'}
                               style={{ 'cursor': 'pointer' }}
                               onClick={() => toggleProfileDataEditMode(contactsBlockEditMode, setContactsBlockEditMode)}>{contactsBlockEditMode ? 'Choose contacts to edit' : 'Edit Contacts'}</p> : null}
+                         {isCurrentUser && !directEditMode &&
+                              <NavLink to={'/edit'} hidden={directEditMode && !isCurrentUser}
+                                       className={'profile-mobile-edit-btn'}>Edit
+                                   Profile</NavLink>}
                     </div>
                     {!isCurrentUser &&
                          <button disabled={followUserFetch === userId}

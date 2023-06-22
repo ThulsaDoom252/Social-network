@@ -13,7 +13,7 @@ const Friends = ({ nightMode, friends, handleUnfollowFriend, defaultAvatar, frie
                               <p className={'friends-page-title'}>You are following {friends.length} Users</p>
                               <hr className={'friends-page-hr'} />
                          </div>
-                         <div className={'friends-list-grid'}>
+                         <div className={'friends-list'}>
                               {friends.map((friend, index) => <div key={index} className={'friend-block'}>
                                    <NavLink to={'/profile/' + friend.id}>
                                         <img className={'friend-avatar'}

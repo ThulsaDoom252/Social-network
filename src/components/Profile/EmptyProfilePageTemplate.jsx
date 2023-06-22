@@ -25,10 +25,10 @@ const EmptyProfilePageTemplate = ({showMobileVersion}) => {
                     </div>
                 </div>
             </div>
-            <div className={"center-part-block"}>
-                <div className={"center-bg"}></div>
-                <div className={"center-user-info-block"}>
-                    <div className="profile-page-center-avatarBlockContainer">
+            <div className={"profile-center-part-block"}>
+                <div className={"profile-bg"}></div>
+                <div className={"profile-user-data-container"}>
+                    <div className="profile-avatar-container">
                         <div>
                             <img className="profile-page-avatar"
                                  src={noAvatar}
@@ -52,20 +52,20 @@ const EmptyProfilePageTemplate = ({showMobileVersion}) => {
                 </div>
                 {<div style={{"display": showMobileVersion && "block", ...loadingAnimation}}
                       className={"mobile-friends-block"}>
-                    <div className={"center-friends-block"}>
+                    <div className={"profile-mobile-friends-list"}>
                     </div>
                 </div>}
-                <div className={"profile-page-center-wall"}>
+                <div className={"profile-wall"}>
                     <div className={"profile-page-navBar-container"}>
-                        <span style={loadingAnimation} className={"profile-page-navBar-item"}></span>
-                        <span style={loadingAnimation} className={"profile-page-navBar-item"}></span>
-                        <span style={loadingAnimation} className={"profile-page-navBar-item"}></span>
-                        <span style={loadingAnimation} className={"profile-page-navBar-item"}></span>
+                        <span style={loadingAnimation} className={"profile-navbar-item"}></span>
+                        <span style={loadingAnimation} className={"profile-navbar-item"}></span>
+                        <span style={loadingAnimation} className={"profile-navbar-item"}></span>
+                        <span style={loadingAnimation} className={"profile-navbar-item"}></span>
                     </div>
                     <div>
                         <div>
-                            <div style={loadingAnimation} className={'profile-page-post-container'}></div>
-                            <div style={loadingAnimation} className={'profile-page-post-container'}></div>
+                            <div style={loadingAnimation} className={'profile-post-container'}></div>
+                            <div style={loadingAnimation} className={'profile-post-container'}></div>
                         </div>
                     </div>
                 </div>
