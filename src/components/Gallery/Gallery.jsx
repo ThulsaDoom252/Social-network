@@ -1,4 +1,5 @@
 import React from 'react'
+import { nightModeStyles } from '../../common/nightModeStyles'
 
 const Gallery = ({ handleOverlay, photos, nightMode }) => {
 

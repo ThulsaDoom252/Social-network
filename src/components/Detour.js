@@ -1,15 +1,16 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { connect, useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 import authHoc from './HOC/authHoc'
 import { compose } from '@reduxjs/toolkit'
-import SignInContainer from './Auth/SignInContainer'
-import SettingsContainer from './Settings/SettingsContainer'
 
 const Detour = ({ auth }) => {
+     const currentUserId = useSelector(state => state.auth.id)
+
      if (!auth) {
-          return <SignInContainer />
+          return <Navigate to={'/signIn'} />
      } else {
-          return <SettingsContainer />
+          return <Navigate to={`/profile/${currentUserId}`} />
      }
 }
 
