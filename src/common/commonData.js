@@ -29,3 +29,7 @@ export const mainLink = 'mainLink'
 export const twitter = 'twitter'
 export const facebook = 'facebook'
 export const website = 'website'
+
+
+export const statusMaxLength = 50
+export const statusErrorText = `Status length can't exceed ${statusMaxLength} characters!`

@@ -102,14 +102,14 @@
 }
 
 /*CENTER*/
-.center-part-block {
+.profile-center-part-block {
   background: linear-gradient(300deg, #ffdddd, #e7abab, #fae5bb, #fce4cb);
   width: 650px;
   min-height: 500px;
   font-family: "Open Sans";
 }
 
-.center-bg {
+.profile-bg {
   background: url("../components/Profile/ProfilePageMainPart/header-bg.webp");
   background-size: 650px 280px;
   background-position: 122px center;
@@ -117,21 +117,14 @@
   position: relative;
 }
 
-.center-edit-btn {
-  background-color: #5EE7C1FF;
-  color: white;
-  height: 40px;
-  width: 120px;
-  padding-top: 8px;
-  letter-spacing: 1px;
-  font-size: 1.1rem;
-  border-radius: 8px;
+.profile-edit-btn {
+  @extend %profileEditBtn;
   position: absolute;
   bottom: 8px;
   right: 70px;
 }
 
-.center-user-info-block {
+.profile-user-data-container {
   display: flex;
   justify-content: space-between;
 }
@@ -176,61 +169,78 @@
   color: #1e8f45;
 }
 
-.mobile-friends-block {
+.profile-mobile-edit-btn {
   display: none;
-  width: 40%;
+  @extend %profileEditBtn;
+  margin: 20px auto;
+
+}
+
+.profile-mobile-block {
+  display: none;
+  padding: 10px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.mobile-friends-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
   font-family: "Fira Sans";
   min-height: 200px;
   font-size: 1.1rem;
-  margin: -15px auto 40px 30px;
   border: gray thin solid;
 }
 
-.center-friends-block {
+.profile-mobile-friends-list {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.center-friend-block {
+.profile-mobile-friend-block {
   width: 100px;
   padding: 5px;
 }
 
-.center-friends-button {
+.profile-mobile-friends-link {
   font-size: 3rem;
   font-family: "Fira Sans";
   cursor: pointer;
 }
 
-
 .profile-mobile-gallery-block {
-  display: none;
-  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
   min-height: 200px;
-  margin: -30px auto 30px 30px;
-  border: solid gray thin
+  border: $grayThinSolidBorder
 }
 
-.photos-block {
+.profile-mobile-photos-list {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
-.profile-mobile-photo-block {
+.profile-mobile-gallery-item {
   width: 125px;
   padding: 5px;
 }
 
-.center-gallery-button {
+.profile-mobile-gallery-link {
+  border-radius: 5px;
   font-size: 1.3rem;
   font-family: "Fira Sans";
   cursor: pointer;
 }
+
 
 .profile-data-block, .profile-data-block-about {
   font-family: SansSerif;
@@ -238,8 +248,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(243, 223, 132, 0.2);
-  width: 200px;
+  background-color: rgba(220, 176, 7, 0.2);
+  max-width: 200px;
   min-height: 100px;
   border-radius: 5px;
   text-align: center;
@@ -254,9 +264,9 @@
   transition: background-color 150ms ease-out;
 }
 
-//.profile-data-block-about {
-//  display: none;
-//}
+.profile-data-block-about {
+  display: none;
+}
 
 .job-description-input {
   width: 100%;
@@ -270,21 +280,20 @@
 }
 
 /*REACTIONS BAR*/
-.profile-reactions-container {
+.profile-icons-bar {
   display: flex;
   margin-top: 3px;
-  height: 10px;
-  text-align: center;
+  min-height: 20px;
+  justify-content: space-between;
   align-items: center;
   border-radius: 10px;
   background-color: rgba(111, 221, 255, 0.4);
-  padding: 10px;
+  padding: 0 50px 0 50px;
 }
 
-.profile-reaction {
+.profile-icons-bar-item {
   display: flex;
   align-items: center;
-  margin-left: 55px;
   padding: 2px;
 }
 
@@ -297,32 +306,31 @@
 }
 
 /*WALL*/
-.profile-page-navBar-item, .profile-page-navBar-item-active {
+.profile-navbar-item, .profile-navbar-item-active {
   padding: 0 40px 0 40px;
   font-family: "Open Sans";
   font-size: 1.1rem;
 }
 
-.profile-page-navBar-item:disabled {
+.profile-navbar-item:disabled {
   color: gray;
 }
 
-.profile-page-navBar-item:hover {
+.profile-navbar-item:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.profile-page-navBar-item-active {
+.profile-navbar-item-active {
   text-decoration: underline;
 }
 
-.profile-page-center-wall {
+.profile-wall {
   min-height: 140px;
 }
 
 /*POST*/
-
-.profile-page-post-container {
+.profile-post-container {
   display: flex;
   position: relative;
   justify-content: center;
@@ -330,28 +338,28 @@
   margin: 50px auto;
 }
 
-.profile-page-post-avatar {
+.profile-post-avatar {
   width: 70px;
   height: 70px;
   border-radius: 40px;
 }
 
-.profile-page-post-block {
+.profile-post-block {
   border-radius: 10px;
   position: relative;
   left: 10px;
-  width: 400px;
+  max-width: 400px;
   height: auto;
 }
 
-.profile-page-post-name {
+.profile-post-user-name {
   width: 100%;
   text-align: left;
   font-weight: bold;
   margin-bottom: 3px;
 }
 
-.profile-page-post {
+.profile-post-text {
   border-radius: 10px;
   text-align: center;
   padding: 10px;
@@ -359,18 +367,6 @@
   background-color: white;
 }
 
-.wall-plug {
-  display: flex;
-  align-items: center;
-  height: 300px;
-  font-family: SansSerif;
-  font-size: 1.3rem;
-  justify-content: center;
-}
-
-.wall-plug-img {
-  width: 30px;
-}
 
 .wall-section-container {
   margin-top: 50px;
@@ -383,13 +379,16 @@
   display: flex;
 }
 
-.profile-page-center-avatarBlockContainer {
+.profile-avatar-container {
   position: relative;
   display: flex;
   justify-content: center;
   width: 50%;
-  max-width: 400px;
   bottom: 120px;
+}
+
+.profile-page-avatar {
+  width: 200px !important;
 }
 
 .contact-direct-input {
@@ -399,6 +398,14 @@
   background: white;
   border: solid thin;
   color: black;
+}
+
+.profile-avatar-block {
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .direct-contact-edit-button {
@@ -553,7 +560,7 @@
 }
 
 .status {
-  width: 95%;
+  width: 70%;
   word-wrap: break-word;
 }
 

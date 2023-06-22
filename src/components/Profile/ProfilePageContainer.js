@@ -12,7 +12,7 @@ import { followUserThunk, unfollowFriendThunk, unFollowUserThunk } from '../../r
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { getContactIcon } from '../../common/commonFuncs'
-import { aboutData, isLookingForAJobData } from '../../common/commonData'
+import { aboutData, isLookingForAJobData, statusMaxLength } from '../../common/commonData'
 import ProfilePageLeftPart from './ProfilePageLeftPart'
 import ProfilePageMainPart from './ProfilePageMainPart/ProfilePageMainPart'
 import ProfilePageRightPart from './ProfilePageRightPart'
@@ -116,7 +116,7 @@ const ProfilePageContainer = ({
      //////Status block
      const [statusEditMode, setStatusEditMode] = useState(false)
      const [statusValue, setStatusValue] = useState(status)
-     const statusLengthError = statusValue !== null && statusValue.length > 300
+     const statusLengthError = statusValue !== null && statusValue.length > statusMaxLength
      const handleChangeStatus = (e) => {
           setStatusValue(e.currentTarget.value)
      }

@@ -2,22 +2,37 @@
 @import "templates";
 
 .header-container {
+  position: relative;
   background-image: url("../components/Header/BG.jpg");
   background-size: 1100px 300px;
   background-position: center -30px;
-  @include sizeMx(100%, 200px);
+  height: 200px;
   @extend %centeredRowFlexDisplay;
   font-size: 0.938rem;
   background-repeat: no-repeat;
   color: white;
 }
 
+.header-top-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5%;
+}
+
 .header-current-user-block {
   @include flexDisplayMx($align: center);
-  @include positionMx(absolute, $bottom: 50px);
-  padding: 0 0 0 1.5%;
-  width: 100%;
-  align-items: center;
+}
+
+
+.logOut-btn {
+  @extend %centeredRowFlexDisplay;
+  @include sizeMx(100px, 40px);
+  @include borderMx($style: none, $radius: 5px);
+  letter-spacing: 2px;
+  background-color: #5EE7C1FF;
+  font-size: 1rem;
 }
 
 .header-avatar-item {
@@ -25,12 +40,11 @@
 }
 
 .header-avatar {
-  width: 100%;
   border-radius: 50px;
 }
 
 .header-user-name {
-  margin: 0 0 0 30px;
+  margin-left: 30px;
   letter-spacing: 3px;
   text-decoration: none;
 }
@@ -40,40 +54,39 @@
   text-decoration: underline;
 }
 
-.logOut-btn {
-  @extend %centeredRowFlexDisplay;
-  @include sizeMx(100px, 40px);
-  @include positionMx(absolute, $right: 2%);
-  @include borderMx($style: none, $radius: 5px);
-  letter-spacing: 2px;
-  background-color: #5EE7C1FF;
-  font-size: 1rem;
-}
-
 .logOut-btn:hover {
   transition: 0.5s;
   text-decoration: underline;
   cursor: pointer;
 }
 
+.burger-navbar {
+  display: none;
+}
+
 .navbar {
+  @extend %centeredRowFlexDisplay;
   margin-top: auto;
   @include positionMx(absolute, $bottom: 10px);
+  width: 100%;
   letter-spacing: 7px;
 }
 
-.navbar-btn, .navbar-btn-active {
+
+.navbar-item, .navbar-item-active {
+  display: flex;
+  align-items: center;
   border-right: #ffffff solid 3px;
   padding-left: 5px;
   text-decoration: none;
   color: white;
 }
 
-.navbar-btn-active {
+.navbar-item-active {
   text-decoration: underline;
 }
 
-.navbar-btn:hover {
+.navbar-item:hover {
   text-decoration: underline;
   cursor: pointer;
   transition: 0.5s;

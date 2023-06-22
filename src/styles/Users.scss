@@ -1,13 +1,11 @@
 @import "variables";
 
 .users-container {
-  margin-top: 15px;
   width: 100%;
   border-radius: 5px;
   font-family: "Open Sans";
   min-height: 400px;
   background-color: #d2c4c4;
-  padding: 20px;
   overflow-y: scroll;
   min-height: $minPageContainerHeight;
 }
@@ -18,13 +16,12 @@
   font-size: 1.3rem;
 }
 
-.users-list-grid {
+.users-list {
   display: grid;
   width: 100%;
   max-height: fit-content;
-  margin: 40px auto auto auto;
+  margin: 40px auto;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  gap: 5px;
 }
 
 .user-block {
