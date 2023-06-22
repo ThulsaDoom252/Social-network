@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactionsBar from "./ReactionsBar";
+import IconsBar from "./IconsBar";
 
 const WallSections = ({
                           0: name, 1: firstPost, 2: secondPost, 3: largePhoto, 4: defaultAvatar, 5: isPostSectionActive,
@@ -12,14 +12,14 @@ const WallSections = ({
         <div>
             {isPostSectionActive &&
                 <div>
-                    {postData.map(postData => <div className={"profile-page-post-container"} key={postData.post}>
-                            <img className="profile-page-post-avatar"
+                    {postData.map(postData => <div className={"profile-post-container"} key={postData.post}>
+                            <img className="profile-post-avatar"
                                  src={postData.largePhoto ? postData.largePhoto : defaultAvatar}
                                  alt="large photo"/>
-                            <div className={"profile-page-post-block"}>
-                                <p className={"profile-page-post-name"}>{postData.name}</p>
-                                <p className={"profile-page-post"}>{postData.post}</p>
-                                <ReactionsBar/>
+                            <div className={"profile-post-block"}>
+                                <p className={"profile-post-user-name"}>{postData.name}</p>
+                                <p className={"profile-post-text"}>{postData.post}</p>
+                                <IconsBar/>
                             </div>
                         </div>
                     )}

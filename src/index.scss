@@ -14,24 +14,381 @@
 @import "./styles/EditProfilePage";
 @import "./styles/Gallery";
 @import "./styles/Overlay";
+@import "./styles/MainContainers";
 
-/*MAIN CONTAINERS*/
-.wrapper {
-  width: 1100px;
-  margin: 0 auto;
+//BREAKPOINTS
+
+//AUTH
+@media only screen and (max-width: 1149px) {
+  .login-page-right-part-signUp-block {
+    display: none;
+  }
+
+  .login-left-part-container {
+    display: none;
+  }
+
+  .mobile-signUp-block {
+    display: block;
+  }
+
+  .login-page-container {
+    display: flex;
+    max-width: 400px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 2%;
+    animation: loginAppear 1.5s forwards;
+  }
+
+  .login-page-right-part-container {
+    width: auto;
+    display: table;
+    background: linear-gradient(190deg, #e5ffeb, #badcd2, #bdb1c5, #cbbc92);
+
+  }
+
+  .signIn-container {
+    display: flex;
+    position: relative;
+    right: 20px;
+    justify-content: center;
+    background-image: url("components/Auth/mobile-signInlogo.png");
+    background-size: 300px;
+    background-position: 24px 55px;
+  }
 }
 
-.section-content {
-  width: 100%;
-  min-height: 775px;
-  transition: 0.5s;
-  text-align: center;
-  background: linear-gradient(360deg, #6868ff, #3c91ff, #37a6c7, #70d3ef);
+@media only screen and (max-width: 392px) {
+  .signIn-container {
+    background-position: -10px 55px;
+    background-size: 280px;
+  }
 }
 
-.container {
-  transition: 0.5s;
-  max-height: fit-content;
-  @include sizeMx(100vw, 100vh);
-  @extend %centeredColumnFlexDisplay;
+@media only screen and (max-width: 392px) {
+  .signIn-container {
+    background-position: -10px 55px;
+    background-size: 260px;
+  }
 }
+
+//Logged
+@media screen and (max-width: 1033px) {
+  .wrapper {
+    width: 800px;
+  }
+  .navbar {
+    letter-spacing: 3px;
+  }
+  .navbar-item {
+    margin: 2px;
+  }
+  .profile-mobile-block {
+    display: flex;
+  }
+  .profile-center-part-block {
+    width: 100%;
+  }
+  .profile-bg {
+    background-size: 100% auto !important;
+    background-position: center center !important;
+  }
+  .profile-data-block-about {
+    display: flex;
+  }
+  .profile-left-part-block {
+    display: none;
+  }
+  .profile-page-right-part-block {
+    display: none;
+  }
+
+  .edit-profile-avatar-part {
+    display: none;
+  }
+
+  .edit-profile-contacts-part {
+    display: none;
+  }
+
+  .edit-profile-page-container {
+    display: block;
+  }
+
+  .edit-profile-data-part {
+    background-image: none;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .edit-profile-title {
+    position: static;
+    text-decoration: underline;
+    margin: 22px auto auto auto !important;
+  }
+
+  .edit-profile-mobile-avatar-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .data-first-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 45px 0 45px;
+  }
+
+  .data-name-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  .data-about-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  .edit-profile-input {
+    width: 100%;
+  }
+
+  .data-second-block {
+    margin-top: 20px;
+  }
+
+  .edit-profile-job-description-block {
+    padding-top: 10px !important;
+  }
+
+  .edit-profile-job-description-input {
+    margin-top: 10px;
+  }
+
+  .edit-profile-mobile-contacts-container {
+    display: block;
+  }
+
+  .edit-profile-mobile-contacts-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 70px 0 70px;
+  }
+
+  .edit-profile-mobile-contact-input {
+    width: 80%;
+    padding: 5px;
+    border: gray thin solid;
+    margin: 5px;
+  }
+
+  .submit-btn-container {
+    margin: 0 auto;
+  }
+
+  .user-block {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 794px) {
+  .wrapper {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .navbar-item, .navbar-item-active {
+    border-right: none;
+  }
+  .users-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .user-block {
+    width: 140px;
+    margin: 5px;
+  }
+  .friends-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .friend-block {
+    margin: 5px;
+    width: 140px;
+    font-weight: 2;
+    font-size: 1.2rem;
+  }
+
+  .new-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+@media screen and (max-width: 588px) {
+  .profile-mobile-block {
+    flex-direction: column;
+  }
+  .mobile-friends-block {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 518px) {
+  .profile-navbar-item:disabled {
+    display: none;
+  }
+  .new-message-current-user-name {
+    display: none;
+  }
+  .message-page-user-name {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 477px) {
+  .header-current-user-block {
+    display: block;
+  }
+
+  .header-user-name {
+    display: none;
+    margin: auto;
+  }
+
+  .profile-icons-bar {
+    justify-content: space-between;
+  }
+
+  .profile-comment-icon, .profile-share-icon {
+    display: none;
+  }
+
+  .profile-user-data-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-user-data-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    bottom: 100px;
+  }
+
+  .profile-edit-btn {
+    display: none;
+  }
+
+  .profile-mobile-edit-btn {
+    display: block;
+  }
+
+  .direct-contact-edit-button {
+    display: none;
+  }
+
+  .profile-editAble-blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .profile-mobile-block {
+    position: relative;
+    bottom: 100px;
+  }
+
+  .profile-data-block {
+    width: 50%;
+  }
+
+  .profile-data-block-about {
+    width: 50%;
+  }
+
+  .message-page-user {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .message-page-user-name {
+    width: 100%;
+  }
+
+  .sender-block {
+    justify-content: center;
+  }
+
+  .receiver-label {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 339px) {
+  .header-container {
+    height: 100px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .header-current-user-block {
+    display: none;
+  }
+
+  .logOut-btn {
+    display: none;
+  }
+  .burger-navbar {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    border: $grayThinSolidBorder;
+    font-size: 2rem;
+  }
+
+  .settings-block {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 301px) {
+  .profile-post-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile-post-user-name {
+    text-align: center;
+  }
+}
+

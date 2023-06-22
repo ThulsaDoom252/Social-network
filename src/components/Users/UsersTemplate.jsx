@@ -4,7 +4,7 @@ const UsersTemplate = ({ emptyUsers, defaultUserAvatar }) => {
      return (
           <>
                <div className={'users-page-title'}>USERS</div>
-               <div className='users-list-grid'>
+               <div className='users-list'>
                     {emptyUsers.map((user, index) =>
                          <div className='user-block' key={index}>
                               <div>

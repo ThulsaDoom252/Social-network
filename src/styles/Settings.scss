@@ -4,10 +4,9 @@
 
 /*SETTINGS*/
 .settings-page-container {
-  @include sizeMx(90%, $minHeight: 715px);
+  height: $minPageContainerHeight;
   @include backgroundMx(url("https://www.freeiconspng.com/uploads/white-gear-png-gear-icon-png-white-gear-icon-30.png") rgba(255, 255, 255, 0.8), $repeat: no-repeat, $position: 350px 90px);
   min-height: $minPageContainerHeight;
-  margin: 15px auto;
   font-size: 1.1rem;
   padding: 15px;
   font-family: SansSerif;

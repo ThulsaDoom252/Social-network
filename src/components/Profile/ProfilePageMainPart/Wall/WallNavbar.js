@@ -4,20 +4,20 @@ const WallNavbar = ({0: activeBlock, 1: handleClick}) => {
     return (
         <div className={"profile-page-navBar-container"}>
             <button onClick={() => handleClick("Posts")}
-                    className={activeBlock === "Posts" ? "profile-page-navBar-item-active" : "profile-page-navBar-item"}>Posts
+                    className={activeBlock === "Posts" ? "profile-navbar-item-active" : "profile-navbar-item"}>Posts
             </button>
             <button
                 disabled={true}
                 onClick={() => handleClick("Media")}
-                className={activeBlock === "Media" ? "profile-page-navBar-item-active" : "profile-page-navBar-item"}>Media
+                className={activeBlock === "Media" ? "profile-navbar-item-active" : "profile-navbar-item"}>Media
             </button>
             <button onClick={() => handleClick("Likes")}
                     disabled={true}
-                    className={activeBlock === "Likes" ? "profile-page-navBar-item-active" : "profile-page-navBar-item"}>Likes
+                    className={activeBlock === "Likes" ? "profile-navbar-item-active" : "profile-navbar-item"}>Likes
             </button>
             <button onClick={() => handleClick("Replies")}
                     disabled={true}
-                    className={activeBlock === "Replies" ? "profile-page-navBar-item-active" : "profile-page-navBar-item"}>Replies
+                    className={activeBlock === "Replies" ? "profile-navbar-item-active" : "profile-navbar-item"}>Replies
             </button>
         </div>
     );

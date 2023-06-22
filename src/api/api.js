@@ -93,7 +93,6 @@ export const profileApi = {
     youtube,
     mainLink
   ) {
-    debugger;
     return instance.put("profile/", {
       userid,
       aboutMe,

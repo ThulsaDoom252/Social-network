@@ -15,7 +15,7 @@ const ProfileWall = ({fullName, largePhoto, defaultAvatar}) => {
     const isLikesSectionActive = activeBlock === 'Likes'
     const isRepliesSectionActive = activeBlock === 'Replies'
     return (
-        <div className={"profile-page-center-wall"}>
+        <div className={"profile-wall"}>
             <WallNavbar {...[activeBlock, handleClick]}/>
             <WallSections {...[fullName, firstPost, secondPost, largePhoto, defaultAvatar, isPostSectionActive,
                 isMediaSectionActive, isLikesSectionActive, isRepliesSectionActive]}/>

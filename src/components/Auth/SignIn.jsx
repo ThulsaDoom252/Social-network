@@ -13,7 +13,6 @@ const SignIn = ({
                      errorMessage,
                      captcha
                 }) => {
-     window.loginFetch = loginFetch
      return (
           <form className={'signIn-form'} onSubmit={handleSubmit}>
                <div className={'signIn-container'}>

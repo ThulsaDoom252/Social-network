@@ -7,25 +7,30 @@ import { ImProfile, ImUsers } from 'react-icons/im'
 import { TfiGallery, TfiInfoAlt } from 'react-icons/tfi'
 import { HiUsers } from 'react-icons/hi'
 import { BiMessageSquareDots } from 'react-icons/bi'
-import { GrGallery } from 'react-icons/gr'
+import { RxHamburgerMenu } from 'react-icons/rx'
 
 const Header = ({ userId, handleLogOut, userName, currentUserAvatar }) => {
-     const navButtonsClass = 'navbar-btn'
-     const navButtonsActiveClass = 'navbar-btn-active'
+     const navButtonsClass = 'navbar-item'
+     const navButtonsActiveClass = 'navbar-item-active'
      return (
           <header className={'header-container'}>
-               <div className={'header-current-user-block'}>
-                    <div className={'header-avatar-item'}>
-                         <img className={'header-avatar'}
-                              src={currentUserAvatar ? currentUserAvatar : defaultAvatar}
-                              alt={'user-avatar'} />
+               <div className='header-top-block'>
+                    <div className={'header-current-user-block'}>
+                         <div className={'header-avatar-item'}>
+                              <img className={'header-avatar'}
+                                   src={currentUserAvatar ? currentUserAvatar : defaultAvatar}
+                                   alt={'user-avatar'} />
+                         </div>
+                         <NavLink to={`/profile/${userId}`} className={'header-user-name'}>{userName}</NavLink>
                     </div>
-                    <NavLink to={`/profile/${userId}`} className={'header-user-name'}>{userName}</NavLink>
                     <button title='logout' className={'logOut-btn'}
                             onClick={handleLogOut}>
                          <RiLogoutBoxRLine />
                          <span className={'header-logOut-label'}>Log out</span>
                     </button>
+               </div>
+               <div className={'burger-navbar'}>
+                    <RxHamburgerMenu />
                </div>
                <div className={'navbar'}>
                     <NavLink

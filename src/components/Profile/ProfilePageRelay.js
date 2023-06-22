@@ -28,7 +28,6 @@ const ProfilePageRelay = (props, { showMobileVersion }) => {
                     profilePageNotFound
                })
           }
-          debugger
 
      }, [userIdRouterParam])
 
