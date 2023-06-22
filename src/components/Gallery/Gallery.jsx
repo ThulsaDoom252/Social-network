@@ -3,8 +3,6 @@ import { nightModeStyles } from '../../common/nightModeStyles'
 
 const Gallery = ({ handleOverlay, photos, nightMode }) => {
 
-     ///No onCLick handler in photos-block
-
      return (
           <div style={nightMode ? nightModeStyles.centerBlock : null} className={'gallery-container'}>
                <p className={'gallery-photo-label'}>Your photos:</p>

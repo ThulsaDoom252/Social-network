@@ -62,7 +62,7 @@ const App = () => {
                               <Route path={'/gallery'} element={<GalleryContainer {...{ nightMode, dispatch }} />} />
                               <Route path={'/signIn'} element={<SignInContainer />} />
                               <Route path={'/users'} element={<UsersRelay />} />
-                              <Route path={'/about'} element={<About />} />
+                              <Route path={'/about'} element={<About {...{ nightMode }} />} />
                               <Route path={'/settings'} element={<SettingsContainer {...nightMode} />} />
                               <Route path='*' element={<NotFound />} />
                          </Routes>
